@@ -1,0 +1,15 @@
+# Netlify deploy config.
+#
+# The Lovable Vite config builds with Nitro. On Netlify we force Nitro's "netlify"
+# preset, which outputs:
+#   - static client assets      → dist/
+#   - SSR + server functions     → .netlify/functions-internal/server (picked up automatically)
+# so the publish directory must be "dist" (not "dist/client", which is the Cloudflare layout).
+# Inside Lovable's own build sandbox NITRO_PRESET is ignored, so this file doesn't affect Lovable.
+
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[build.environment]
+  NITRO_PRESET = "netlify"
