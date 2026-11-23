@@ -1,5 +1,5 @@
 import { useHydrated } from "@tanstack/react-router";
-import { ExternalLink, Heart, Users } from "lucide-react";
+import { ExternalLink, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { CREATOR } from "@/lib/site-config";
@@ -82,14 +82,9 @@ export function TwitchSection({
             )}
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button asChild variant="surface" size="xl">
-              <a href={CREATOR.links.twitch} target="_blank" rel="noopener noreferrer">
-                Apri su Twitch <ExternalLink />
-              </a>
-            </Button>
             <Button asChild variant="glow" size="xl">
               <a href={CREATOR.links.twitch} target="_blank" rel="noopener noreferrer">
-                <Heart /> Segui il canale
+                Apri su Twitch <ExternalLink />
               </a>
             </Button>
           </div>
