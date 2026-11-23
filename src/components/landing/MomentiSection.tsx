@@ -5,17 +5,20 @@ import { Button } from "@/components/ui/button";
 import { MOMENTI } from "@/lib/site-config";
 
 import { InstagramIcon, TikTokIcon, XIcon, YouTubeIcon } from "./BrandIcons";
+import { FollowerCount } from "./FollowerCount";
 
 function MomentiCard({
   icon,
   title,
   subtitle,
+  followers = null,
   href,
   cta,
 }: {
   icon: ReactNode;
   title: string;
   subtitle: string;
+  followers?: number | null;
   href: string;
   cta: string;
 }) {
@@ -28,6 +31,11 @@ function MomentiCard({
         <div className="min-w-0">
           <h3 className="font-display text-lg font-bold text-foreground">{title}</h3>
           <p className="truncate text-sm font-medium text-highlight">{subtitle}</p>
+          {followers !== null && (
+            <div className="mt-1">
+              <FollowerCount count={followers} tone="highlight" />
+            </div>
+          )}
         </div>
       </div>
       <div className="mt-auto pt-6">
@@ -76,6 +84,11 @@ export function MomentiSection() {
                 </p>
                 <h3 className="font-display text-2xl font-bold text-foreground">TikTok</h3>
                 <p className="break-all text-sm font-medium text-highlight">@{MOMENTI.handle}</p>
+                {MOMENTI.followers.tiktok !== null && (
+                  <div className="mt-1">
+                    <FollowerCount count={MOMENTI.followers.tiktok} tone="highlight" />
+                  </div>
+                )}
               </div>
             </div>
             <Button asChild variant="glow-highlight" size="xl" className="w-full sm:w-auto">
@@ -90,6 +103,7 @@ export function MomentiSection() {
               icon={<InstagramIcon className="size-6" />}
               title="Instagram"
               subtitle={`@${MOMENTI.handle}`}
+              followers={MOMENTI.followers.instagram}
               href={MOMENTI.links.instagram}
               cta="Segui su Instagram"
             />
@@ -97,6 +111,7 @@ export function MomentiSection() {
               icon={<YouTubeIcon className="size-6" />}
               title="YouTube"
               subtitle="Canale ufficiale"
+              followers={MOMENTI.followers.youtube}
               href={MOMENTI.links.youtube}
               cta="Iscriviti"
             />
@@ -104,6 +119,7 @@ export function MomentiSection() {
               icon={<XIcon className="size-5" />}
               title="X (Twitter)"
               subtitle={`@${MOMENTI.xHandle}`}
+              followers={MOMENTI.followers.x}
               href={MOMENTI.links.x}
               cta="Segui su X"
             />

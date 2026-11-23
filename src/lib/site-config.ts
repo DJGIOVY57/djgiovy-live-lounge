@@ -19,6 +19,14 @@ export const CREATOR = {
     instagram: "https://www.instagram.com/djgiovy57",
     tiktok: "https://www.tiktok.com/@djgiovy57",
   },
+  // Follower counts shown on the social cards (number only, like Twitch).
+  // Update by hand when they change; null hides the indicator.
+  followers: {
+    youtube: 124,
+    tiktok: 124,
+    instagram: null as number | null,
+    x: null as number | null,
+  },
 } as const;
 
 /** "I migliori momenti di Twitch" — separate project founded by the creator (yellow accent). */
@@ -31,5 +39,11 @@ export const MOMENTI = {
     instagram: "https://instagram.com/imigliorimomentiditwitch",
     youtube: "https://www.youtube.com/channel/UCt8e66zPggfsQrDPxPpBJUg?sub_confirmation=1",
     x: "https://twitter.com/MOMENTIDITWITCH",
+  },
+  followers: {
+    tiktok: 641,
+    youtube: 74,
+    instagram: null as number | null,
+    x: null as number | null,
   },
 } as const;
