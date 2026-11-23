@@ -10,7 +10,6 @@ function SocialCard({
   icon,
   title,
   subtitle,
-  description,
   extra,
   href,
   cta,
@@ -19,7 +18,6 @@ function SocialCard({
   icon: ReactNode;
   title: string;
   subtitle: string;
-  description: string;
   extra?: ReactNode;
   href: string;
   cta: string;
@@ -36,7 +34,6 @@ function SocialCard({
           <p className="text-sm font-medium text-primary">{subtitle}</p>
         </div>
       </div>
-      <p className="mt-5 leading-relaxed text-muted-foreground">{description}</p>
       {extra}
       <div className="mt-auto pt-7">
         <Button asChild variant="glow" size="xl" className="w-full">
@@ -77,7 +74,6 @@ export function SocialCards({
             icon={<YouTubeIcon className="size-7" />}
             title="YouTube"
             subtitle="Canale ufficiale"
-            description="DJ set completi, highlight delle live e video esclusivi. Iscriviti e attiva la campanella per non perdere nessun nuovo video."
             href={CREATOR.links.youtube}
             cta="Iscriviti al canale"
           />
@@ -85,7 +81,6 @@ export function SocialCards({
             icon={<DiscordIcon className="size-7" />}
             title="Discord"
             subtitle="Server della community"
-            description="Entra nel server per giocare insieme, ricevere le notifiche delle live e partecipare agli eventi."
             extra={
               discordMembers !== null ? (
                 <div className="mt-5 flex flex-wrap gap-3 text-sm">
@@ -108,7 +103,6 @@ export function SocialCards({
             icon={<XIcon className="size-6" />}
             title="X (Twitter)"
             subtitle={`@${CREATOR.handle}`}
-            description="Aggiornamenti quotidiani, clip delle live, orari delle stream e tutte le novità."
             href={CREATOR.links.x}
             cta="Segui su X"
           />
@@ -116,7 +110,6 @@ export function SocialCards({
             icon={<InstagramIcon className="size-7" />}
             title="Instagram"
             subtitle={`@${CREATOR.handle.toLowerCase()}`}
-            description="Foto, storie e reel dal dietro le quinte: serate, set e momenti di vita da DJ."
             href={CREATOR.links.instagram}
             cta="Segui su Instagram"
           />
@@ -124,7 +117,6 @@ export function SocialCards({
             icon={<TikTokIcon className="size-6" />}
             title="TikTok"
             subtitle={`@${CREATOR.handle.toLowerCase()}`}
-            description="Clip brevi, mix al volo e i momenti più divertenti delle live in formato verticale."
             href={CREATOR.links.tiktok}
             cta="Segui su TikTok"
           />
