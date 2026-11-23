@@ -20,3 +20,16 @@ export const CREATOR = {
     tiktok: "https://www.tiktok.com/@djgiovy57",
   },
 } as const;
+
+/** "I migliori momenti di Twitch" — separate project founded by the creator (yellow accent). */
+export const MOMENTI = {
+  name: "I migliori momenti di Twitch",
+  handle: "imigliorimomentiditwitch",
+  xHandle: "MOMENTIDITWITCH",
+  links: {
+    tiktok: "https://www.tiktok.com/@imigliorimomentiditwitch",
+    instagram: "https://instagram.com/imigliorimomentiditwitch",
+    youtube: "https://www.youtube.com/channel/UCt8e66zPggfsQrDPxPpBJUg?sub_confirmation=1",
+    x: "https://twitter.com/MOMENTIDITWITCH",
+  },
+} as const;

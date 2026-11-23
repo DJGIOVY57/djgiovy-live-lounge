@@ -57,6 +57,9 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-offline: var(--offline);
+  --color-highlight: var(--highlight);
+  --color-highlight-glow: var(--highlight-glow);
+  --color-highlight-foreground: var(--highlight-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -77,6 +80,8 @@
   --shadow-glow: var(--glow);
   --shadow-glow-strong: var(--glow-strong);
   --shadow-card: var(--card-shadow);
+  --shadow-glow-highlight: var(--glow-highlight);
+  --shadow-glow-highlight-strong: var(--glow-highlight-strong);
   --animate-pulse-dot: pulse-dot 1.6s ease-out infinite;
   --animate-ring-glow: ring-glow 2.4s ease-in-out infinite;
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -103,6 +108,10 @@
   --destructive: oklch(0.637 0.237 25.3);
   --destructive-foreground: oklch(0.967 0.003 264.5);
   --offline: oklch(0.55 0.015 260);
+  /* Yellow accent for the separate "I migliori momenti di Twitch" project */
+  --highlight: oklch(0.86 0.17 92);              /* ~#FACC15 */
+  --highlight-glow: oklch(0.92 0.18 100);        /* brighter neon yellow */
+  --highlight-foreground: oklch(0.18 0.02 90);
   --border: oklch(1 0 0 / 0.08);
   --input: oklch(1 0 0 / 0.1);
   --ring: oklch(0.696 0.17 162.5);
@@ -126,6 +135,10 @@
   --glow: 0 0 0 1px oklch(0.696 0.17 162.5 / 0.35), 0 8px 30px -8px oklch(0.696 0.17 162.5 / 0.55);
   --glow-strong: 0 0 0 1px oklch(0.765 0.2 150 / 0.6), 0 12px 44px -6px oklch(0.765 0.2 150 / 0.7);
   --card-shadow: 0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 20px 50px -24px oklch(0 0 0 / 0.8);
+  --gradient-highlight: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-glow) 100%);
+  --gradient-highlight-glow: radial-gradient(60% 60% at 50% 0%, oklch(0.86 0.17 92 / 0.16) 0%, transparent 70%);
+  --glow-highlight: 0 0 0 1px oklch(0.86 0.17 92 / 0.35), 0 8px 30px -8px oklch(0.86 0.17 92 / 0.55);
+  --glow-highlight-strong: 0 0 0 1px oklch(0.92 0.18 100 / 0.6), 0 12px 44px -6px oklch(0.92 0.18 100 / 0.7);
 }
 
 @layer base {
@@ -197,6 +210,30 @@
     transform: translateY(-4px) scale(1.012);
     border-color: oklch(0.696 0.17 162.5 / 0.4);
     box-shadow: var(--card-shadow), 0 0 40px -12px oklch(0.696 0.17 162.5 / 0.45);
+  }
+}
+
+@utility bg-gradient-highlight {
+  background-image: var(--gradient-highlight);
+}
+
+@utility bg-highlight-radial {
+  background-image: var(--gradient-highlight-glow);
+}
+
+@utility text-gradient-highlight {
+  background-image: var(--gradient-highlight);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Same hover lift as surface-card-interactive, but with the yellow neon */
+@utility surface-card-highlight {
+  &:hover {
+    transform: translateY(-4px) scale(1.012);
+    border-color: oklch(0.86 0.17 92 / 0.45);
+    box-shadow: var(--card-shadow), 0 0 40px -12px oklch(0.86 0.17 92 / 0.45);
   }
 }
 

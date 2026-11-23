@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Hero } from "@/components/landing/Hero";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
+import { MomentiSection } from "@/components/landing/MomentiSection";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SocialCards } from "@/components/landing/SocialCards";
 import { SpotifySection } from "@/components/landing/SpotifySection";
@@ -21,7 +22,7 @@ const channelStatusQuery = queryOptions({
 
 const TITLE = "DJGIOVY57 — Live su Twitch, musica e social";
 const DESCRIPTION =
-  "Il punto d'incontro di DJGIOVY57: live su Twitch, playlist Spotify, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok.";
+  "Il punto d'incontro di DJGIOVY57: live su Twitch, playlist Spotify, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok. Più il progetto I migliori momenti di Twitch.";
 
 export const Route = createFileRoute("/")({
   validateSearch: (search: Record<string, unknown>): { test?: string } =>
@@ -62,6 +63,7 @@ function Index() {
           discordMembers={data.discord.members}
           discordOnline={data.discord.online}
         />
+        <MomentiSection />
       </main>
       <SiteFooter />
       {showToggle && <LiveModeToggle mode={mode} onChange={setMode} />}

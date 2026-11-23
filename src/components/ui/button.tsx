@@ -19,6 +19,8 @@ const buttonVariants = cva(
         glow: "bg-gradient-primary text-primary-foreground font-semibold shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-strong active:translate-y-0",
         surface:
           "border border-primary/25 bg-primary/10 text-foreground font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/20 hover:shadow-glow active:translate-y-0",
+        "glow-highlight":
+          "bg-gradient-highlight text-highlight-foreground font-semibold shadow-glow-highlight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-highlight-strong active:translate-y-0",
       },
       size: {
         default: "h-9 px-4 py-2",
