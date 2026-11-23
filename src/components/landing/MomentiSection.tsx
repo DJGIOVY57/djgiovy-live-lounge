@@ -53,9 +53,12 @@ export function MomentiSection() {
 
         <div className="relative">
           <div className="mb-8 text-center">
+            <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-highlight">
+              Un mio progetto · Founder
+            </p>
             <h2
               id="momenti-title"
-              className="font-display text-3xl font-bold uppercase text-gradient-highlight sm:text-4xl"
+              className="mt-3 font-display text-3xl font-bold uppercase text-gradient-highlight sm:text-4xl"
             >
               {MOMENTI.name}
             </h2>
