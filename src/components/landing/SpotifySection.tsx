@@ -17,9 +17,8 @@ export function SpotifySection() {
             </span>
             <div>
               <h2 id="spotify-title" className="font-display text-2xl font-bold text-foreground">
-                La mia playlist
+                Playlist Spotify
               </h2>
-              <p className="text-sm text-muted-foreground">I brani che suono e ascolto, su Spotify</p>
             </div>
           </div>
           <Button asChild variant="surface" size="lg" className="self-start sm:self-auto">
