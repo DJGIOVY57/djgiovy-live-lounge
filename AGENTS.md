@@ -33,3 +33,4 @@ use the editor.
 - Creator info and links live only in `src/lib/site-config.ts`; components read from it so copy changes are one-file edits.
 - External status data (Twitch live/avatar/followers, Discord counts) is fetched in the `getChannelStatus` server function, never from the browser — avoids CORS and keeps future API keys server-side.
 - Live-indicator logic stays pure in `src/lib/live-status.ts` (covered by tests); the test toggle only shows in dev or with `?test` in the URL.
+- Router uses `setupRouterSsrQueryIntegration` so loader-fetched query data is dehydrated to the client — without it the client refetches and SSR/hydration mismatch.

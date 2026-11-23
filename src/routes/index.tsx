@@ -6,6 +6,7 @@ import { Hero } from "@/components/landing/Hero";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SocialCards } from "@/components/landing/SocialCards";
+import { SpotifySection } from "@/components/landing/SpotifySection";
 import { TwitchSection } from "@/components/landing/TwitchSection";
 import { getChannelStatus } from "@/lib/channel.functions";
 import { resolveIsLive, type LiveMode } from "@/lib/live-status";
@@ -18,9 +19,9 @@ const channelStatusQuery = queryOptions({
   staleTime: 30_000,
 });
 
-const TITLE = "DJGIOVY57 — Live su Twitch, Discord e X";
+const TITLE = "DJGIOVY57 — Live su Twitch, musica e social";
 const DESCRIPTION =
-  "Il punto d'incontro di DJGIOVY57: guarda le live su Twitch, entra nel server Discord e segui gli aggiornamenti su X.";
+  "Il punto d'incontro di DJGIOVY57: live su Twitch, playlist Spotify, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok.";
 
 export const Route = createFileRoute("/")({
   validateSearch: (search: Record<string, unknown>): { test?: string } =>
@@ -56,6 +57,7 @@ function Index() {
           uptime={mode === "auto" ? data.twitch.uptime : null}
           followers={data.twitch.followers}
         />
+        <SpotifySection />
         <SocialCards
           discordMembers={data.discord.members}
           discordOnline={data.discord.online}

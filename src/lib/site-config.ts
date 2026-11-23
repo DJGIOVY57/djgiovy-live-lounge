@@ -9,9 +9,14 @@ export const CREATOR = {
   bio: "DJ, streamer e creator. Musica, gaming e tanta community: ci vediamo in live su Twitch.",
   twitchChannel: "djgiovy57",
   discordInviteCode: "yXrD3hq5Pv",
+  spotifyPlaylistId: "1vVSr9M4dADCIm5a8B0xYl",
   links: {
     twitch: "https://www.twitch.tv/djgiovy57",
     discord: "https://discord.gg/yXrD3hq5Pv",
     x: "https://twitter.com/DJGIOVY57",
+    youtube: "https://www.youtube.com/channel/UCYm0aSvi4ca31-PHtWyzdCg?sub_confirmation=1",
+    spotify: "https://open.spotify.com/playlist/1vVSr9M4dADCIm5a8B0xYl",
+    instagram: "https://www.instagram.com/djgiovy57",
+    tiktok: "https://www.tiktok.com/@djgiovy57",
   },
 } as const;

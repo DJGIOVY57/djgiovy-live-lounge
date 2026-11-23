@@ -2,7 +2,15 @@ import type { ReactNode } from "react";
 
 import { CREATOR } from "@/lib/site-config";
 
-import { DiscordIcon, TwitchIcon, XIcon } from "./BrandIcons";
+import {
+  DiscordIcon,
+  InstagramIcon,
+  SpotifyIcon,
+  TikTokIcon,
+  TwitchIcon,
+  XIcon,
+  YouTubeIcon,
+} from "./BrandIcons";
 
 function FooterLink({ href, label, children }: { href: string; label: string; children: ReactNode }) {
   return (
@@ -25,7 +33,7 @@ export function SiteFooter({ children }: { children?: ReactNode }) {
         <p className="text-sm text-muted-foreground">
           © {new Date().getFullYear()} <span className="font-semibold text-foreground">{CREATOR.name}</span>. Tutti i diritti riservati.
         </p>
-        <nav aria-label="Social" className="flex items-center gap-3">
+        <nav aria-label="Social" className="flex flex-wrap items-center justify-center gap-3">
           <FooterLink href={CREATOR.links.twitch} label="Twitch">
             <TwitchIcon className="size-5" />
           </FooterLink>
@@ -34,6 +42,18 @@ export function SiteFooter({ children }: { children?: ReactNode }) {
           </FooterLink>
           <FooterLink href={CREATOR.links.x} label="X (Twitter)">
             <XIcon className="size-4" />
+          </FooterLink>
+          <FooterLink href={CREATOR.links.youtube} label="YouTube">
+            <YouTubeIcon className="size-5" />
+          </FooterLink>
+          <FooterLink href={CREATOR.links.spotify} label="Spotify">
+            <SpotifyIcon className="size-5" />
+          </FooterLink>
+          <FooterLink href={CREATOR.links.instagram} label="Instagram">
+            <InstagramIcon className="size-5" />
+          </FooterLink>
+          <FooterLink href={CREATOR.links.tiktok} label="TikTok">
+            <TikTokIcon className="size-5" />
           </FooterLink>
         </nav>
       </div>

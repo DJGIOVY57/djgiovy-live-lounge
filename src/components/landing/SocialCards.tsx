@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { CREATOR } from "@/lib/site-config";
 
-import { DiscordIcon, XIcon } from "./BrandIcons";
+import { DiscordIcon, InstagramIcon, TikTokIcon, XIcon, YouTubeIcon } from "./BrandIcons";
 
 function SocialCard({
   icon,
@@ -14,6 +14,7 @@ function SocialCard({
   extra,
   href,
   cta,
+  className = "",
 }: {
   icon: ReactNode;
   title: string;
@@ -22,9 +23,10 @@ function SocialCard({
   extra?: ReactNode;
   href: string;
   cta: string;
+  className?: string;
 }) {
   return (
-    <article className="surface-card surface-card-interactive flex flex-col p-6 sm:p-8">
+    <article className={`surface-card surface-card-interactive flex flex-col p-6 sm:p-8 ${className}`}>
       <div className="flex items-center gap-4">
         <span className="flex size-14 items-center justify-center rounded-2xl bg-primary/15 text-primary ring-1 ring-primary/30">
           {icon}
@@ -71,6 +73,15 @@ export function SocialCards({
 
         <div className="grid gap-5 md:grid-cols-2">
           <SocialCard
+            className="md:col-span-2"
+            icon={<YouTubeIcon className="size-7" />}
+            title="YouTube"
+            subtitle="Canale ufficiale"
+            description="DJ set completi, highlight delle live e video esclusivi. Iscriviti e attiva la campanella per non perdere nessun nuovo video."
+            href={CREATOR.links.youtube}
+            cta="Iscriviti al canale"
+          />
+          <SocialCard
             icon={<DiscordIcon className="size-7" />}
             title="Discord"
             subtitle="Server della community"
@@ -100,6 +111,22 @@ export function SocialCards({
             description="Aggiornamenti quotidiani, clip delle live, orari delle stream e tutte le novità."
             href={CREATOR.links.x}
             cta="Segui su X"
+          />
+          <SocialCard
+            icon={<InstagramIcon className="size-7" />}
+            title="Instagram"
+            subtitle={`@${CREATOR.handle.toLowerCase()}`}
+            description="Foto, storie e reel dal dietro le quinte: serate, set e momenti di vita da DJ."
+            href={CREATOR.links.instagram}
+            cta="Segui su Instagram"
+          />
+          <SocialCard
+            icon={<TikTokIcon className="size-6" />}
+            title="TikTok"
+            subtitle={`@${CREATOR.handle.toLowerCase()}`}
+            description="Clip brevi, mix al volo e i momenti più divertenti delle live in formato verticale."
+            href={CREATOR.links.tiktok}
+            cta="Segui su TikTok"
           />
         </div>
       </div>
