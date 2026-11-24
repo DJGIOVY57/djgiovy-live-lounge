@@ -1,7 +1,7 @@
-import { ArrowUpRight, MessageCircle, Radio, Users } from "lucide-react";
+import { ArrowUpRight, Gamepad2, Radio, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { CREATOR } from "@/lib/site-config";
+import { CREATOR, DISCORD } from "@/lib/site-config";
 
 import { DiscordIcon } from "./BrandIcons";
 
@@ -15,11 +15,6 @@ const PERKS = [
     icon: Radio,
     title: "Avvisi live",
     text: "Ricevi la notifica appena vado in onda su Twitch, così non ti perdi nemmeno una diretta.",
-  },
-  {
-    icon: MessageCircle,
-    title: "Contatto diretto",
-    text: "Il modo più semplice per parlare con me e con gli altri membri della Lounge.",
   },
 ] as const;
 
@@ -95,6 +90,32 @@ export function DiscordSection({
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{perk.text}</p>
               </article>
             ))}
+
+            <article className="surface-card flex flex-col p-6">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                <Gamepad2 className="size-6" aria-hidden="true" />
+              </span>
+              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
+                Stanze per ogni gioco
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Nel server trovi stanze riservate ai giochi che ci piacciono: entra, chiama e si
+                gioca insieme.
+              </p>
+              <ul className="mt-auto flex flex-wrap gap-2 pt-4">
+                {DISCORD.games.map((game) => (
+                  <li
+                    key={game}
+                    className="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
+                  >
+                    {game}
+                  </li>
+                ))}
+                <li className="rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs font-semibold text-muted-foreground">
+                  {DISCORD.gamesTail}
+                </li>
+              </ul>
+            </article>
           </div>
         </div>
       </div>

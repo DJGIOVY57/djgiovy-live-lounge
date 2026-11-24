@@ -64,6 +64,12 @@ export const COMMUNITY: {
   ],
 };
 
+/** Discord server: dedicated voice rooms per game, plus the "and many more" hint. */
+export const DISCORD = {
+  games: ["GTA", "FIFA", "Fortnite", "Minecraft", "Rainbow Six Siege"],
+  gamesTail: "e tanti altri",
+} as const;
+
 /** "I migliori momenti di Twitch" — separate project founded by the creator (yellow accent). */
 export const MOMENTI = {
   name: "I migliori momenti di Twitch",

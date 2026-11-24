@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Sostituire "Contatto diretto" con "Stanze per ogni gioco" nella sezione Discord (GTA, FIFA, Fortnite, Minecraft, Rainbow Six Siege, e tanti altri)
+
 - [x] Logo Twitch verde e lampeggiante in live, grigio e statico offline (verificato con cambio di stato simulato)
 
 - [x] Rimuovere l’easter egg del logo e correggere la condivisione su https://www.djgiovy57.it (test e verifica nel sito)
