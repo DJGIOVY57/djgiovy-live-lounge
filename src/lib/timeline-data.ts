@@ -5,7 +5,7 @@ export const MILESTONES = [
     title: "Il sito diventa la Lounge",
     label: "Un nuovo capitolo",
     description:
-      "Il sito di DJGIOVY57 si evolve nella Lounge attuale: un nuovo capitolo dell’idea nata nel 2021.",
+      "Il sito si evolve nella Lounge attuale: un nuovo capitolo dell’idea nata nel 2021.",
   },
   {
     date: "2021-10-25",
