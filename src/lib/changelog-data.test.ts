@@ -12,8 +12,9 @@ describe("Site history dates", () => {
     expect(MILESTONES.find((entry) => entry.title === "Il sito diventa la Lounge")?.date).toBe("2026-11-23");
   });
 
-  it("dates the first release the day the Lounge began", () => {
+  it("numbers the Lounge as the second era of the site, still in alpha", () => {
     expect(RELEASES[0]?.date).toBe("2026-11-23");
-    expect(RELEASES.map((release) => release.version)).toEqual(["0.1"]);
+    expect(RELEASES[0]?.stage).toBe("ALPHA");
+    expect(RELEASES.map((release) => release.version)).toEqual(["2.0"]);
   });
 });

@@ -57,6 +57,14 @@ function ChangelogPage() {
           <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             La Lounge, un aggiornamento alla volta.
           </p>
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground/80">
+            La numerazione riparte da 2.0: la 1.x è stata l’era del sito su Google Sites,
+            raccontata nella{" "}
+            <Link to="/timeline" className="text-primary hover:underline">
+              timeline
+            </Link>
+            .
+          </p>
         </div>
 
         <ol aria-label="Cronologia degli aggiornamenti" className="ml-2 border-l border-border">
