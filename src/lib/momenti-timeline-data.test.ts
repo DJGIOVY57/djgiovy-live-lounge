@@ -13,4 +13,12 @@ describe("Momenti project timeline", () => {
       expect(milestone.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     }
   });
+
+  it("records the TikTok page birth on 15 March 2022", () => {
+    expect(MOMENTI_MILESTONES.find((m) => m.title === "Nasce la pagina TikTok")?.date).toBe("2022-03-15");
+  });
+
+  it("records the first milestone two days later, on 17 March 2022", () => {
+    expect(MOMENTI_MILESTONES.find((m) => m.title === "La prima clip che fa scattare tutto")?.date).toBe("2022-03-17");
+  });
 });

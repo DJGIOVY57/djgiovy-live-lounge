@@ -1,20 +1,20 @@
 /**
  * Historical milestones of the "I migliori momenti di Twitch" project, newest first.
- * Dates and events below are provisional: replace them with the real ones.
+ * Dates come from the creator; keep them newest-first.
  */
 export const MOMENTI_MILESTONES = [
   {
-    date: "2026-11-08",
-    title: "Il progetto si allarga su YouTube e X",
-    label: "Nuovi canali",
+    date: "2022-03-17",
+    title: "La prima clip che fa scattare tutto",
+    label: "Il primo traguardo",
     description:
-      "Dopo TikTok arrivano il canale YouTube ufficiale e la pagina X: i momenti migliori diventano una raccolta ordinata, non più solo clip sparse.",
+      "Due giorni dopo la nascita della pagina, una clip supera la cerchia di chi già c'era e porta i primi 600 follower: da quel momento il progetto smette di essere un esperimento e diventa una community.",
   },
   {
-    date: "2026-09-05",
+    date: "2022-03-15",
     title: "Nasce la pagina TikTok",
     label: "Le origini",
     description:
-      "La prima pagina de I migliori momenti di Twitch: una raccolta di clip da far scoprire a chi non era in live.",
+      "I migliori momenti di Twitch prendono forma come pagina TikTok: una vetrina dove raccogliere le clip più belle nate in live e farle scoprire a chi non c'era.",
   },
 ] as const;
