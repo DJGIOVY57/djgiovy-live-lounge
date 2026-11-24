@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Timeline de "I migliori momenti di Twitch" su pagina separata in giallo, collegata da sezione e footer
+- [ ] Sostituire le tappe provvisorie della timeline Momenti con date ed eventi reali (in attesa dell'elenco)
+
 - [x] Separare le tappe storiche nella pagina Timeline e mantenere il Changelog per le versioni
 - [x] Collegare Timeline dal footer e verificare entrambe le pagine su desktop e mobile
 

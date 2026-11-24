@@ -32,7 +32,7 @@ export function CustomCursor() {
       if (ref.current) ref.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
       const t = e.target instanceof Element ? e.target : null;
       setHovering(!!t?.closest("a, button, [role=button], input, label, select, textarea"));
-      setHighlight(!!t?.closest("#momenti"));
+      setHighlight(!!t?.closest("#momenti, [data-cursor-highlight]"));
       setOnFilled(!!t?.closest('[class*="bg-gradient-primary"], [class*="bg-gradient-highlight"], .bg-primary, .bg-highlight'));
     };
     const leave = () => setVisible(false);

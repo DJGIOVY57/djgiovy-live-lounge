@@ -1,4 +1,5 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Milestone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -62,6 +63,13 @@ export function MomentiSection() {
             >
               {MOMENTI.name}
             </h2>
+            <Link
+              to="/momenti-timeline"
+              className="mt-4 inline-flex items-center gap-2 font-display text-sm font-semibold text-highlight underline-offset-4 transition hover:underline"
+            >
+              <Milestone className="size-4" aria-hidden="true" />
+              Timeline del progetto
+            </Link>
           </div>
 
           {/* TikTok is the main page of the project: featured, full width */}

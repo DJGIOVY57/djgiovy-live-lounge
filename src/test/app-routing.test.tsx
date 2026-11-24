@@ -14,4 +14,12 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("matches the Momenti project timeline page", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes("/momenti-timeline");
+
+    expect(matches.at(-1)?.routeId).toBe("/momenti-timeline");
+  });
 });

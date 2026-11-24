@@ -38,3 +38,4 @@ use the editor.
 - Side scroll dock (`ScrollDock`) and scroll-reveal (`ScrollReveal`) are mounted once in the index route; reveal classes are added by JS only so content stays visible without it, and removed after animating so hover transitions keep working.
 - Release history lives newest-first in `src/lib/changelog-data.ts`; the floating badge and `/changelog` read the same current release so version labels cannot drift.
 - Historical milestones live newest-first in `src/lib/timeline-data.ts` and render on `/timeline`, separate from release notes so site history never changes the current version.
+- The "I migliori momenti di Twitch" project keeps its own history newest-first in `src/lib/momenti-timeline-data.ts` and renders on `/momenti-timeline` in the yellow `highlight` tokens, so project milestones never mix with the creator's own timeline or with release notes.
