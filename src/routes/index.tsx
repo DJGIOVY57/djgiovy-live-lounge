@@ -20,7 +20,7 @@ const channelStatusQuery = queryOptions({
   staleTime: 30_000,
 });
 
-const TITLE = "DJGIOVY57 — Live su Twitch, musica e social";
+const TITLE = "DJGIOVY57's Lounge";
 const DESCRIPTION =
   "Il punto d'incontro di DJGIOVY57: live su Twitch, playlist Spotify, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok. Più il progetto I migliori momenti di Twitch.";
 
