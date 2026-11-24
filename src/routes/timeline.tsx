@@ -5,7 +5,7 @@ import { CustomCursor } from "@/components/landing/CustomCursor";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { MOMENTI_MILESTONES } from "@/lib/momenti-timeline-data";
-import { CREATOR, MOMENTI } from "@/lib/site-config";
+import { CREATOR, MOMENTI, SITE } from "@/lib/site-config";
 import { MILESTONES } from "@/lib/timeline-data";
 
 const TITLE = `Timeline — ${CREATOR.name}'s Lounge`;
@@ -19,10 +19,10 @@ export const Route = createFileRoute("/timeline")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://djgiovy-live-lounge.lovable.app/timeline" },
+      { property: "og:url", content: `${SITE.url}/timeline` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://djgiovy-live-lounge.lovable.app/timeline" }],
+    links: [{ rel: "canonical", href: `${SITE.url}/timeline` }],
   }),
   component: TimelinePage,
 });

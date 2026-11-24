@@ -5,7 +5,7 @@ import { CustomCursor } from "@/components/landing/CustomCursor";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { CURRENT_RELEASE, RELEASES } from "@/lib/changelog-data";
-import { CREATOR } from "@/lib/site-config";
+import { CREATOR, SITE } from "@/lib/site-config";
 
 const TITLE = `Changelog — ${CREATOR.name}'s Lounge`;
 const DESCRIPTION = `Novità, miglioramenti e note di rilascio del sito di ${CREATOR.name}.`;
@@ -18,10 +18,10 @@ export const Route = createFileRoute("/changelog")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://djgiovy-live-lounge.lovable.app/changelog" },
+      { property: "og:url", content: `${SITE.url}/changelog` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://djgiovy-live-lounge.lovable.app/changelog" }],
+    links: [{ rel: "canonical", href: `${SITE.url}/changelog` }],
   }),
   component: ChangelogPage,
 });
