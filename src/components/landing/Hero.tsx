@@ -2,7 +2,6 @@ import { CREATOR } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 import { LiveBadge } from "./LiveBadge";
-import { ShareButton } from "./ShareButton";
 
 export function Hero({ live, avatarUrl }: { live: boolean; avatarUrl: string | null }) {
   return (
@@ -46,7 +45,6 @@ export function Hero({ live, avatarUrl }: { live: boolean; avatarUrl: string | n
         <p className="mt-4 max-w-md animate-fade-up text-base leading-relaxed text-muted-foreground [animation-delay:280ms] sm:text-lg">
           {CREATOR.bio}
         </p>
-        <div className="mt-7 pb-5"><ShareButton /></div>
       </div>
     </header>
   );

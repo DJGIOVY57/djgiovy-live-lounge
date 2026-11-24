@@ -27,7 +27,8 @@
 - [x] Rimuovere i contatori follower fissi (YouTube/TikTok/IG/X, creator + Momenti)
 - [x] Equalizer animato nell'Hero
 - [x] Particelle interattive nello sfondo dell'Hero
-- [x] Pulsante Condividi con QR code
+- [x] Pulsante Condividi con QR code — rimosso dall'Hero su richiesta
 - [x] Programmazione live (da Twitch) + countdown alla prossima live
 - [x] Clip più viste (da Twitch)
 - [x] Mini soundboard (suoni sintetizzati)
+- [x] Rimuovere il pulsante "Condividi Lounge" dall'Hero
