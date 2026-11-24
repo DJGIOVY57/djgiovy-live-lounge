@@ -12,6 +12,8 @@ export function CustomCursor() {
   const [hovering, setHovering] = useState(false);
   const [highlight, setHighlight] = useState(false);
   const [visible, setVisible] = useState(false);
+  // Over filled (gradient) buttons the dot would vanish, so it switches to a contrasting color.
+  const [onFilled, setOnFilled] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -31,6 +33,7 @@ export function CustomCursor() {
       const t = e.target instanceof Element ? e.target : null;
       setHovering(!!t?.closest("a, button, [role=button], input, label, select, textarea"));
       setHighlight(!!t?.closest("#momenti"));
+      setOnFilled(!!t?.closest('[class*="bg-gradient-primary"], [class*="bg-gradient-highlight"]'));
     };
     const leave = () => setVisible(false);
     window.addEventListener("pointermove", move);
@@ -54,7 +57,9 @@ export function CustomCursor() {
         className={cn(
           "-translate-x-1/2 -translate-y-1/2 rounded-full transition-[width,height,background-color,box-shadow] duration-200",
           hovering ? "size-7 bg-transparent border-2" : "size-3",
-          highlight
+          onFilled
+            ? "border-background bg-background/20 shadow-md"
+            : highlight
             ? hovering
               ? "border-highlight-glow shadow-glow-highlight"
               : "bg-highlight-glow shadow-glow-highlight"
