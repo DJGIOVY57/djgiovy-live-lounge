@@ -18,6 +18,7 @@
 
 - [x] Unire le due timeline in un'unica pagina /timeline: blocco verde del sito e blocco giallo del progetto
 - [x] Sostituire le tappe provvisorie della timeline Momenti con quelle reali (nascita pagina TikTok 15/03/2022, primo traguardo 17/03/2022)
+- [x] Aggiungere la fondazione del Gaming Hub (novembre 2021) alla Timeline del sito, con data solo mese
 
 - [x] Separare le tappe storiche nella pagina Timeline e mantenere il Changelog per le versioni
 - [x] Collegare Timeline dal footer e verificare entrambe le pagine su desktop e mobile
