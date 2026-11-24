@@ -12,6 +12,10 @@ describe("Site history dates", () => {
     expect(MILESTONES.find((entry) => entry.title === "Il sito diventa la Lounge")?.date).toBe("2026-11-23");
   });
 
+  it("records the Gaming Hub founding in November 2021", () => {
+    expect(MILESTONES.find((entry) => entry.title === "Nasce il Gaming Hub")?.date).toBe("2021-11");
+  });
+
   it("dates the first release the day the Lounge began", () => {
     expect(RELEASES[0]?.date).toBe("2026-11-23");
   });

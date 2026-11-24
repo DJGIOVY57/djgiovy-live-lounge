@@ -53,6 +53,15 @@ const TONES = {
 } as const;
 
 function formatDate(date: string) {
+  // Month-only milestones (e.g. "2021-11") have no day: format year + month only.
+  if (!date.includes("-", 5)) {
+    return new Intl.DateTimeFormat("it-IT", {
+      month: "long",
+      year: "numeric",
+      timeZone: "Europe/Rome",
+    }).format(new Date(`${date}-01T12:00:00Z`));
+  }
+
   return new Intl.DateTimeFormat("it-IT", {
     day: "numeric",
     month: "long",

@@ -8,6 +8,13 @@ export const MILESTONES = [
       "Il sito si evolve nella Lounge attuale: un nuovo capitolo dell’idea nata nel 2021.",
   },
   {
+    date: "2021-11",
+    title: "Nasce il Gaming Hub",
+    label: "La community",
+    description:
+      "Viene fondato il server Discord Gaming Hub: lo spazio dove la community si incontra, organizza le partite e segue le live.",
+  },
+  {
     date: "2021-10-25",
     title: "Nasce il sito di DJGIOVY57",
     label: "Le origini",
