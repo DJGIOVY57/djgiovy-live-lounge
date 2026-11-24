@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Comandi Twitch copiabili (attesa elenco reale dell’utente)
+- [x] FAQ, condivisione nativa/copia link, easter egg e abbonamento Twitch
+- [x] Verifica desktop/mobile: copia reale, FAQ, sorpresa e link Twitch; condivisione nativa e annullamento simulati
+
 - [x] Banner live automatico con titolo, categoria, durata, accesso al player e chiusura
 - [x] Copertina social personalizzata e anteprima di condivisione della Home
 - [x] Verifica desktop/mobile: stato reale offline, prova live simulata con accesso e chiusura; copertina pubblica 1200×630 e tag coincidenti (diretta reale non disponibile durante la verifica)

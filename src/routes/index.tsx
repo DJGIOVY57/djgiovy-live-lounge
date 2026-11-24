@@ -7,6 +7,7 @@ import { ScrollDock } from "@/components/landing/ScrollDock";
 import { ScrollReveal } from "@/components/landing/ScrollReveal";
 import { CustomCursor } from "@/components/landing/CustomCursor";
 import { Hero } from "@/components/landing/Hero";
+import { CommunityExtras } from "@/components/landing/CommunityExtras";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
 import { LiveNotificationBanner } from "@/components/landing/LiveNotificationBanner";
 import { MomentiSection } from "@/components/landing/MomentiSection";
@@ -89,6 +90,7 @@ function Index() {
           discordOnline={data.discord.online}
         />
         <MomentiSection />
+        <CommunityExtras />
       </main>
       <SiteFooter />
       <ScrollDock />

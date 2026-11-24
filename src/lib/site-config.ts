@@ -29,8 +29,47 @@ export const CREATOR = {
     tiktok: "https://www.tiktok.com/@djgiovy57",
     twitchClips: "https://www.twitch.tv/djgiovy57/clips?filter=clips&range=all",
     twitchSchedule: "https://www.twitch.tv/djgiovy57/schedule",
+    twitchSubscribe: "https://www.twitch.tv/subs/djgiovy57",
   },
 } as const;
+
+export const COMMUNITY: {
+  commands: { command: string; description: string }[];
+  faqs: { question: string; answer: string; href?: string; linkLabel?: string }[];
+  secretTitle: string;
+  secretMessage: string;
+} = {
+  // Only publish commands confirmed by the creator.
+  commands: [],
+  faqs: [
+    {
+      question: "Dove posso seguire le dirette?",
+      answer: "Le dirette sono su Twitch. Quando sono online, trovi il player e l’avviso live anche qui nella Lounge.",
+      href: CREATOR.links.twitch,
+      linkLabel: "Vai al canale Twitch",
+    },
+    {
+      question: "Come posso supportare il canale?",
+      answer: "Puoi abbonarti su Twitch oppure esserci in live, partecipare alla chat e condividere il canale: anche la tua presenza conta.",
+      href: CREATOR.links.twitchSubscribe,
+      linkLabel: "Abbonati su Twitch",
+    },
+    {
+      question: "Dove posso incontrare la community?",
+      answer: "Sul server Discord della community: ci ritroviamo anche fuori dalle dirette.",
+      href: CREATOR.links.discord,
+      linkLabel: "Entra su Discord",
+    },
+    {
+      question: "Cos’è I migliori momenti di Twitch?",
+      answer: "È il progetto di cui sono founder, dedicato ai momenti di Twitch. La pagina principale è su TikTok, con profili anche su Instagram, YouTube e Twitter.",
+      href: "https://www.tiktok.com/@imigliorimomentiditwitch",
+      linkLabel: "Scopri il progetto su TikTok",
+    },
+  ],
+  secretTitle: "Sei nel cuore della Lounge 💚",
+  secretMessage: "Hai trovato l’angolo segreto della community. Grazie per esserci, in live e fuori: questa Lounge è anche tua.",
+};
 
 /** "I migliori momenti di Twitch" — separate project founded by the creator (yellow accent). */
 export const MOMENTI = {
