@@ -33,7 +33,7 @@ export function CustomCursor() {
       const t = e.target instanceof Element ? e.target : null;
       setHovering(!!t?.closest("a, button, [role=button], input, label, select, textarea"));
       setHighlight(!!t?.closest("#momenti"));
-      setOnFilled(!!t?.closest('[class*="bg-gradient-primary"], [class*="bg-gradient-highlight"]'));
+      setOnFilled(!!t?.closest('[class*="bg-gradient-primary"], [class*="bg-gradient-highlight"], .bg-primary, .bg-highlight'));
     };
     const leave = () => setVisible(false);
     window.addEventListener("pointermove", move);
