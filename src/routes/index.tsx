@@ -3,7 +3,6 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
-import { ScrollDock } from "@/components/landing/ScrollDock";
 import { ScrollReveal } from "@/components/landing/ScrollReveal";
 import { CustomCursor } from "@/components/landing/CustomCursor";
 import { DiscordSection } from "@/components/landing/DiscordSection";
@@ -98,7 +97,6 @@ function Index() {
         <CommunityExtras />
       </main>
       <SiteFooter />
-      <ScrollDock live={live} />
       <ScrollReveal />
       <CustomCursor />
       {showToggle && <LiveModeToggle mode={mode} onChange={setMode} />}

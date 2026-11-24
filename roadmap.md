@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Estendere la barra laterale a tutte le pagine, con frecce e trascinamento anche su Timeline e Changelog
+
 - [x] Evidenziare il player durante le live e ricontrollare lo stato al ritorno nella pagina
 - [x] Sostituire la barra del browser con scorrimento laterale trascinabile e migliorare i salti tra sezioni
 

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import * as Slider from "@radix-ui/react-slider";
 import { Button } from "@/components/ui/button";
 import { activeScrollSection } from "@/lib/scroll-navigation";
+import { useRouterState } from "@tanstack/react-router";
 
 const SECTIONS = [
   { id: "top", label: "Inizio" },
@@ -19,9 +20,20 @@ function target(id: string) {
 }
 
 // Side navigation: progress rail, section dots (desktop) and up/down buttons.
-export function ScrollDock({ live = false }: { live?: boolean }) {
+export function ScrollDock() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const isHome = pathname === "/";
+  const [live, setLive] = useState(false);
   const [progress, setProgress] = useState(0);
   const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const updateLive = () => setLive(document.getElementById("twitch")?.getAttribute("data-live") === "true");
+    updateLive();
+    const observer = new MutationObserver(updateLive);
+    observer.observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ["data-live"] });
+    return () => observer.disconnect();
+  }, [pathname]);
 
   useEffect(() => {
     document.documentElement.classList.add("custom-scrollbar");
@@ -31,7 +43,7 @@ export function ScrollDock({ live = false }: { live?: boolean }) {
       frame = requestAnimationFrame(() => {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
-      let idx = activeScrollSection(SECTIONS.map((s) => target(s.id)), window.scrollY);
+      let idx = isHome ? activeScrollSection(SECTIONS.map((s) => target(s.id)), window.scrollY) : 0;
       if (max - window.scrollY < 4) idx = SECTIONS.length - 1;
       setActive(idx);
       });
@@ -48,11 +60,18 @@ export function ScrollDock({ live = false }: { live?: boolean }) {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, []);
+  }, [pathname, isHome]);
 
   const go = (i: number) => {
     const s = SECTIONS[Math.max(0, Math.min(SECTIONS.length - 1, i))];
     if (s) window.scrollTo({ top: target(s.id), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  };
+  const move = (direction: number) => {
+    if (isHome) {
+      go(active + direction);
+      return;
+    }
+    window.scrollBy({ top: direction * window.innerHeight * 0.8, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   };
   const btn =
     "grid h-9 w-9 place-items-center rounded-full border border-border bg-card/80 text-muted-foreground backdrop-blur transition hover:border-primary hover:text-primary hover:shadow-[0_0_16px_var(--color-primary)] disabled:pointer-events-none disabled:opacity-30";
@@ -62,7 +81,7 @@ export function ScrollDock({ live = false }: { live?: boolean }) {
       aria-label="Navigazione pagina"
       className="fixed right-2 bottom-20 z-40 flex flex-col items-center gap-2 rounded-full border border-border bg-card/90 p-1 shadow-card backdrop-blur sm:right-5 md:top-1/2 md:bottom-auto md:-translate-y-1/2"
     >
-      <Button variant="ghost" size="icon" aria-label="Sezione precedente" title="Sezione precedente" className={btn} disabled={active === 0} onClick={() => go(active - 1)}>
+      <Button variant="ghost" size="icon" aria-label={isHome ? "Sezione precedente" : "Scorri verso l’alto"} title="Scorri verso l’alto" className={btn} disabled={isHome ? active === 0 : progress === 0} onClick={() => move(-1)}>
         <ChevronUp className="h-4 w-4" />
       </Button>
       <Slider.Root orientation="vertical" min={0} max={100} step={0.1} value={[progress * 100]} inverted
@@ -77,7 +96,7 @@ export function ScrollDock({ live = false }: { live?: boolean }) {
         </Slider.Track>
         <Slider.Thumb aria-label="Scorrimento pagina" aria-valuetext={`${Math.round(progress * 100)}%`} className="block h-7 w-3 rounded-full border border-primary/50 bg-primary shadow-glow outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background" />
       </Slider.Root>
-      <div className="relative hidden flex-col items-center gap-4 py-2 md:flex">
+      {isHome && <div className="relative hidden flex-col items-center gap-4 py-2 md:flex">
         {SECTIONS.map((s, i) => (
           <Button
             variant="ghost" size="icon"
@@ -97,8 +116,8 @@ export function ScrollDock({ live = false }: { live?: boolean }) {
             </span>
           </Button>
         ))}
-      </div>
-      <Button variant="ghost" size="icon" aria-label="Sezione successiva" title="Sezione successiva" className={btn} disabled={active === SECTIONS.length - 1} onClick={() => go(active + 1)}>
+      </div>}
+      <Button variant="ghost" size="icon" aria-label={isHome ? "Sezione successiva" : "Scorri verso il basso"} title="Scorri verso il basso" className={btn} disabled={isHome ? active === SECTIONS.length - 1 : progress >= 1} onClick={() => move(1)}>
         <ChevronDown className="h-4 w-4" />
       </Button>
     </nav>
