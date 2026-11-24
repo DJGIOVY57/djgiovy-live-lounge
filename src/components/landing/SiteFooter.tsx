@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 
 import { CREATOR } from "@/lib/site-config";
 
@@ -12,7 +14,15 @@ import {
   YouTubeIcon,
 } from "./BrandIcons";
 
-function FooterLink({ href, label, children }: { href: string; label: string; children: ReactNode }) {
+function FooterLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: ReactNode;
+}) {
   return (
     <a
       href={href}
@@ -30,9 +40,21 @@ export function SiteFooter({ children }: { children?: ReactNode }) {
   return (
     <footer className="mt-24 border-t border-border px-5 py-10">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 sm:flex-row sm:justify-between">
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} <span className="font-semibold text-foreground">{CREATOR.name}</span>. Tutti i diritti riservati.
-        </p>
+        <div className="flex flex-col items-center gap-2 sm:items-start">
+          <p className="text-center text-sm text-muted-foreground sm:text-left">
+            © {new Date().getFullYear()}{" "}
+            <span className="font-semibold text-foreground">{CREATOR.name}</span>. Tutti i diritti
+            riservati.
+          </p>
+          <Button
+            asChild
+            variant="link"
+            size="sm"
+            className="h-auto px-0 py-1 text-muted-foreground hover:text-primary"
+          >
+            <Link to="/changelog">Note di rilascio</Link>
+          </Button>
+        </div>
         <nav aria-label="Social" className="flex flex-wrap items-center justify-center gap-3">
           <FooterLink href={CREATOR.links.twitch} label="Twitch">
             <TwitchIcon className="size-5" />

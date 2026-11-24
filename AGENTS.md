@@ -36,3 +36,4 @@ use the editor.
 - Live-indicator logic stays pure in `src/lib/live-status.ts` (covered by tests); the test toggle only shows in dev or with `?test` in the URL.
 - Router uses `setupRouterSsrQueryIntegration` so loader-fetched query data is dehydrated to the client — without it the client refetches and SSR/hydration mismatch.
 - Side scroll dock (`ScrollDock`) and scroll-reveal (`ScrollReveal`) are mounted once in the index route; reveal classes are added by JS only so content stays visible without it, and removed after animating so hover transitions keep working.
+- Release history lives newest-first in `src/lib/changelog-data.ts`; the floating badge and `/changelog` read the same current release so version labels cannot drift.
