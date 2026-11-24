@@ -30,6 +30,7 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
+- Sitemap URLs derive from router staticData.sitemap decisions via src/lib/sitemap.ts and /sitemap.xml, using SITE.url; omit lastmod without page-specific content timestamps so future routes stay explicit and dates remain accurate.
 - Community FAQ copy lives in site-config; browser-only sharing and clipboard actions remain client event handlers to avoid server dependencies.
 - Creator info and links live only in `src/lib/site-config.ts`; components read from it so copy changes are one-file edits.
 - External status data (Twitch live/avatar/followers/title/category, Discord counts) is fetched in the `getChannelStatus` server function, never from the browser — avoids CORS and keeps future API keys server-side.

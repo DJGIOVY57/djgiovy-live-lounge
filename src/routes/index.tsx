@@ -29,6 +29,7 @@ const channelStatusQuery = queryOptions({
 });
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   validateSearch: (search: Record<string, unknown>): { test?: string } =>
     search["test"] !== undefined ? { test: String(search["test"]) } : {},
   loader: ({ context }) =>

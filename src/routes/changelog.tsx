@@ -11,6 +11,7 @@ const TITLE = `Changelog — ${CREATOR.name}'s Lounge`;
 const DESCRIPTION = `Novità, miglioramenti e note di rilascio del sito di ${CREATOR.name}.`;
 
 export const Route = createFileRoute("/changelog")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: TITLE },

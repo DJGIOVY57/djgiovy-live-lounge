@@ -12,6 +12,7 @@ const TITLE = `Timeline — ${CREATOR.name}'s Lounge`;
 const DESCRIPTION = `Le tappe del sito di ${CREATOR.name} e de ${MOMENTI.name}, dalle origini nel 2021 alla Lounge di oggi.`;
 
 export const Route = createFileRoute("/timeline")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: TITLE },
