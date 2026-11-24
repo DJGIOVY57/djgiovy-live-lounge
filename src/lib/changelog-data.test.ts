@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { RELEASES } from "./changelog-data";
+import { CURRENT_RELEASE, RELEASES } from "./changelog-data";
 import { MILESTONES } from "./timeline-data";
 
 describe("Site history dates", () => {
@@ -14,6 +14,13 @@ describe("Site history dates", () => {
 
   it("dates the first release the day the Lounge began", () => {
     expect(RELEASES[0]?.date).toBe("2026-11-23");
-    expect(RELEASES.map((release) => release.version)).toEqual(["0.1"]);
+  });
+
+  it("identifies the Lounge as version 2.0", () => {
+    expect(CURRENT_RELEASE.version).toBe("2.0");
+  });
+
+  it("keeps the Lounge release in Alpha", () => {
+    expect(CURRENT_RELEASE.stage).toBe("ALPHA");
   });
 });

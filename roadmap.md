@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Allineare badge e Changelog ad ALPHA v2.0, nuova era dopo il sito su Google Sites, e verificare navigazione
+
 - [x] Unire le due timeline in un'unica pagina /timeline: blocco verde del sito e blocco giallo del progetto
 - [x] Sostituire le tappe provvisorie della timeline Momenti con quelle reali (nascita pagina TikTok 15/03/2022, primo traguardo 17/03/2022)
 
