@@ -20,15 +20,12 @@ export const RELEASES = [
           "Tema scuro con accenti verde smeraldo ed effetti neon.",
           "Comparsa progressiva delle card durante lo scorrimento.",
           "Puntatore personalizzato su computer, con contrasto sui pulsanti pieni.",
-          "Badge ALPHA color ambra e sezione gialla dedicata a I migliori momenti di Twitch.",
         ],
       },
       {
         label: "Migliorie & fix",
         items: [
           "Stato live e numero di follower Twitch aggiornati automaticamente, insieme ai contatori Discord.",
-          "Rimossi i contatori social che non si aggiornavano automaticamente.",
-          "Programmazione Twitch e clip più viste nascoste, conservate per una futura riattivazione.",
         ],
       },
     ],
