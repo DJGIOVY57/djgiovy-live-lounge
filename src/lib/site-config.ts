@@ -1,3 +1,12 @@
+import loungeCover from "@/assets/lounge-cover.jpg.asset.json";
+
+export const SITE = {
+  title: "DJGIOVY57's Lounge",
+  url: "https://djgiovy-live-lounge.lovable.app",
+  description: "Il punto d'incontro di DJGIOVY57: live su Twitch, playlist Spotify, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok. Più il progetto I migliori momenti di Twitch.",
+  shareImage: `https://djgiovy-live-lounge.lovable.app${loungeCover.url}`,
+} as const;
+
 /**
  * Single source of truth for the creator's public info.
  * Edit names, bio and links here — every section reads from this object.

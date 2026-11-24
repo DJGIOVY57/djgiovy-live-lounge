@@ -1,6 +1,25 @@
 import { describe, expect, it } from "vitest";
 
-import { parseUptimeResponse, resolveIsLive } from "./live-status";
+import { parseStreamMetadata, parseUptimeResponse, resolveIsLive, shouldShowLiveBanner } from "./live-status";
+
+describe("live notification", () => {
+  it("appears during a live and disappears offline", () => {
+    expect(shouldShowLiveBanner(true, false)).toBe(true);
+    expect(shouldShowLiveBanner(false, false)).toBe(false);
+  });
+
+  it("allows closing the current live notification", () => {
+    expect(shouldShowLiveBanner(true, true)).toBe(false);
+  });
+
+  it("keeps real titles and categories but hides failed responses", () => {
+    expect(parseStreamMetadata(" Fortnite ")).toBe("Fortnite");
+    expect(parseStreamMetadata("Una live speciale")).toBe("Una live speciale");
+    expect(parseStreamMetadata("Error: user not found")).toBeNull();
+    expect(parseStreamMetadata("djgiovy57 is offline")).toBeNull();
+    expect(parseStreamMetadata(" ")).toBeNull();
+  });
+});
 
 describe("parseUptimeResponse", () => {
   it("treats the offline message as offline", () => {

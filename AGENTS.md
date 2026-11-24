@@ -31,7 +31,9 @@ use the editor.
 
 ## Project rules
 - Creator info and links live only in `src/lib/site-config.ts`; components read from it so copy changes are one-file edits.
-- External status data (Twitch live/avatar/followers, Discord counts) is fetched in the `getChannelStatus` server function, never from the browser — avoids CORS and keeps future API keys server-side.
+- External status data (Twitch live/avatar/followers/title/category, Discord counts) is fetched in the `getChannelStatus` server function, never from the browser — avoids CORS and keeps future API keys server-side.
+- Mount the live notification only during a live session; dismissal is component-local so a subsequent live can show it again without persistent visitor tracking.
+- The Home share cover uses a CDN asset pointer configured in site-config, with absolute image tags only in the leaf head and a 1200×630 compressed rendition for messaging previews.
 - Twitch clips and schedule come from the `getTwitchExtras` server function (Twitch public web endpoint, no key); it returns empty lists on failure so sections hide instead of breaking. Both sections are currently unmounted from the index route (kept for future re-enable). Schedule/countdown/clip-title logic stays pure in `src/lib/schedule.ts` (tested), with times shown in Europe/Rome so SSR and browser match.
 - Live-indicator logic stays pure in `src/lib/live-status.ts` (covered by tests); the test toggle only shows in dev or with `?test` in the URL.
 - Router uses `setupRouterSsrQueryIntegration` so loader-fetched query data is dehydrated to the client — without it the client refetches and SSR/hydration mismatch.

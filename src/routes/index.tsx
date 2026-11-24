@@ -8,6 +8,7 @@ import { ScrollReveal } from "@/components/landing/ScrollReveal";
 import { CustomCursor } from "@/components/landing/CustomCursor";
 import { Hero } from "@/components/landing/Hero";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
+import { LiveNotificationBanner } from "@/components/landing/LiveNotificationBanner";
 import { MomentiSection } from "@/components/landing/MomentiSection";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SocialCards } from "@/components/landing/SocialCards";
@@ -15,6 +16,7 @@ import { SpotifySection } from "@/components/landing/SpotifySection";
 import { TwitchSection } from "@/components/landing/TwitchSection";
 import { getChannelStatus } from "@/lib/channel.functions";
 import { resolveIsLive, type LiveMode } from "@/lib/live-status";
+import { SITE } from "@/lib/site-config";
 
 // Real status is re-checked every 60s while the page is open.
 const channelStatusQuery = queryOptions({
@@ -23,10 +25,6 @@ const channelStatusQuery = queryOptions({
   refetchInterval: 60_000,
   staleTime: 30_000,
 });
-
-const TITLE = "DJGIOVY57's Lounge";
-const DESCRIPTION =
-  "Il punto d'incontro di DJGIOVY57: live su Twitch, playlist Spotify, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok. Più il progetto I migliori momenti di Twitch.";
 
 export const Route = createFileRoute("/")({
   validateSearch: (search: Record<string, unknown>): { test?: string } =>
@@ -37,13 +35,24 @@ export const Route = createFileRoute("/")({
     ]),
   head: () => ({
     meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
+      { title: SITE.title },
+      { name: "description", content: SITE.description },
+      { property: "og:title", content: SITE.title },
+      { property: "og:description", content: SITE.description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE.url },
+      { property: "og:image", content: SITE.shareImage },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:alt", content: `${SITE.title} — Streamer Affiliato di Twitch e content creator` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SITE.title },
+      { name: "twitter:description", content: SITE.description },
+      { name: "twitter:image", content: SITE.shareImage },
+      { name: "twitter:image:alt", content: `${SITE.title} — Streamer Affiliato di Twitch e content creator` },
     ],
+    links: [{ rel: "canonical", href: SITE.url }],
   }),
   component: Index,
 });
@@ -59,6 +68,12 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <AlphaFloatingPill />
+      {live && <LiveNotificationBanner
+        live={live}
+        title={mode === "auto" ? data.twitch.title : null}
+        category={mode === "auto" ? data.twitch.category : null}
+        uptime={mode === "auto" ? data.twitch.uptime : null}
+      />}
       <Hero live={live} avatarUrl={data.twitch.avatarUrl} />
       <main className="space-y-20 sm:space-y-28">
         <TwitchSection

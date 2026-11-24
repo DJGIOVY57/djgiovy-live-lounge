@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Banner live automatico con titolo, categoria, durata, accesso al player e chiusura
+- [x] Copertina social personalizzata e anteprima di condivisione della Home
+- [x] Verifica desktop/mobile: stato reale offline, prova live simulata con accesso e chiusura; copertina pubblica 1200×630 e tag coincidenti (diretta reale non disponibile durante la verifica)
+
 - [x] Allineare badge e Changelog ad ALPHA v2.0, nuova era dopo il sito su Google Sites, e verificare navigazione
 
 - [x] Unire le due timeline in un'unica pagina /timeline: blocco verde del sito e blocco giallo del progetto

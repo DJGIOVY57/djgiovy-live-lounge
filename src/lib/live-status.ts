@@ -8,6 +8,18 @@ export type LiveMode = "auto" | "live" | "offline";
 
 export const LIVE_MODES: readonly LiveMode[] = ["auto", "live", "offline"];
 
+/** Optional public Twitch metadata must never display provider error messages. */
+export function parseStreamMetadata(text: string): string | null {
+  const value = text.trim();
+  if (!value || /^(error\b|user not found\b|no user\b|invalid\b|rate limit\b)|is offline$/i.test(value)) return null;
+  return value;
+}
+
+/** A closed notification stays closed for the current live session only. */
+export function shouldShowLiveBanner(live: boolean, dismissed: boolean): boolean {
+  return live && !dismissed;
+}
+
 /**
  * Parses the plain-text answer of decapi.me/twitch/uptime/<channel>.
  * Offline → "<channel> is offline". Live → e.g. "1 hour, 4 minutes, 12 seconds".

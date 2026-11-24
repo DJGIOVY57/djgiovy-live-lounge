@@ -45,7 +45,7 @@ export function TwitchSection({
   followers: number | null;
 }) {
   return (
-    <section id="twitch" aria-labelledby="twitch-title" className="px-5">
+    <section id="twitch" aria-labelledby="twitch-title" className="scroll-mt-6 px-5">
       <div className="surface-card mx-auto max-w-5xl p-4 sm:p-7">
         <div className="mb-5 flex flex-col gap-4 sm:mb-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
@@ -53,7 +53,7 @@ export function TwitchSection({
               <TwitchIcon className="size-6" />
             </span>
             <div>
-              <h2 id="twitch-title" className="font-display text-2xl font-bold text-foreground">
+              <h2 id="twitch-title" tabIndex={-1} className="font-display text-2xl font-bold text-foreground">
                 Canale Twitch
               </h2>
               {live && uptime ? (

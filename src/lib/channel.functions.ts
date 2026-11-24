@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 
-import { parseUptimeResponse } from "./live-status";
+import { parseStreamMetadata, parseUptimeResponse } from "./live-status";
 import { CREATOR } from "./site-config";
 
 /**
@@ -24,6 +24,8 @@ export type ChannelStatus = {
     uptime: string | null;
     avatarUrl: string | null;
     followers: number | null;
+    title: string | null;
+    category: string | null;
   };
   discord: {
     members: number | null;
@@ -41,16 +43,18 @@ async function fetchText(url: string): Promise<string> {
 export const getChannelStatus = createServerFn({ method: "GET" }).handler(
   async (): Promise<ChannelStatus> => {
     const channel = CREATOR.twitchChannel;
-    const [uptime, avatar, followers, discord] = await Promise.allSettled([
+    const [uptime, avatar, followers, discord, title, category] = await Promise.allSettled([
       fetchText(`https://decapi.me/twitch/uptime/${channel}`),
       fetchText(`https://decapi.me/twitch/avatar/${channel}`),
       fetchText(`https://decapi.me/twitch/followcount/${channel}`),
       fetchText(
         `https://discord.com/api/v10/invites/${CREATOR.discordInviteCode}?with_counts=true`,
       ),
+      fetchText(`https://decapi.me/twitch/title/${channel}`),
+      fetchText(`https://decapi.me/twitch/game/${channel}`),
     ]);
 
-    for (const r of [uptime, avatar, followers, discord]) {
+    for (const r of [uptime, avatar, followers, discord, title, category]) {
       if (r.status === "rejected") console.error("[channel-status]", r.reason);
     }
 
@@ -85,7 +89,11 @@ export const getChannelStatus = createServerFn({ method: "GET" }).handler(
     }
 
     return {
-      twitch: { live: live.live, uptime: live.uptime, avatarUrl, followers: followerCount },
+      twitch: {
+        live: live.live, uptime: live.uptime, avatarUrl, followers: followerCount,
+        title: live.live && title.status === "fulfilled" ? parseStreamMetadata(title.value) : null,
+        category: live.live && category.status === "fulfilled" ? parseStreamMetadata(category.value) : null,
+      },
       discord: { members, online },
       checkedAt: new Date().toISOString(),
     };
