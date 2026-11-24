@@ -1,4 +1,4 @@
-import { BetaFloatingPill } from "@/components/landing/BetaIndicators";
+import { AlphaFloatingPill } from "@/components/landing/BetaIndicators";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
@@ -56,7 +56,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BetaFloatingPill />
+      <AlphaFloatingPill />
       <Hero live={live} avatarUrl={data.twitch.avatarUrl} />
       <main className="space-y-20 sm:space-y-28">
         <TwitchSection
