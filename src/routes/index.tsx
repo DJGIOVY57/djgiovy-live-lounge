@@ -90,10 +90,7 @@ function Index() {
           members={data.discord.members}
           online={data.discord.online}
         />
-        <SocialCards
-          discordMembers={data.discord.members}
-          discordOnline={data.discord.online}
-        />
+        <SocialCards />
         <MomentiSection />
         <CommunityExtras />
       </main>

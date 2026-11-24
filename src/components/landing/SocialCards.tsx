@@ -4,13 +4,12 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { CREATOR } from "@/lib/site-config";
 
-import { DiscordIcon, InstagramIcon, TikTokIcon, XIcon, YouTubeIcon } from "./BrandIcons";
+import { InstagramIcon, TikTokIcon, XIcon, YouTubeIcon } from "./BrandIcons";
 
 function SocialCard({
   icon,
   title,
   subtitle,
-  extra,
   href,
   cta,
   className = "",
@@ -18,7 +17,6 @@ function SocialCard({
   icon: ReactNode;
   title: string;
   subtitle: string;
-  extra?: ReactNode;
   href: string;
   cta: string;
   className?: string;
@@ -34,7 +32,6 @@ function SocialCard({
           <p className="text-sm font-medium text-primary">{subtitle}</p>
         </div>
       </div>
-      {extra}
       <div className="mt-auto pt-7">
         <Button asChild variant="glow" size="xl" className="w-full">
           <a href={href} target="_blank" rel="noopener noreferrer">
@@ -46,13 +43,11 @@ function SocialCard({
   );
 }
 
-export function SocialCards({
-  discordMembers,
-  discordOnline,
-}: {
-  discordMembers: number | null;
-  discordOnline: number | null;
-}) {
+/**
+ * Discord is not listed here: it has its own dedicated section (DiscordSection),
+ * so the grid keeps only the platforms without a section of their own.
+ */
+export function SocialCards() {
   return (
     <section id="community" aria-labelledby="community-title" className="px-5">
       <div className="mx-auto max-w-5xl">
@@ -69,29 +64,6 @@ export function SocialCards({
         </div>
 
         <div className="grid gap-5 md:grid-cols-2">
-          <SocialCard
-            className="md:col-span-2"
-            icon={<DiscordIcon className="size-7" />}
-            title="Discord"
-            subtitle="Server della community"
-            extra={
-              discordMembers !== null ? (
-                <div className="mt-5 flex flex-wrap gap-3 text-sm">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-3 py-1.5 text-muted-foreground">
-                    <span className="size-2 rounded-full bg-primary-glow" />
-                    <span className="font-semibold text-foreground">{discordOnline ?? 0}</span>{" "}
-                    online
-                  </span>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-3 py-1.5 text-muted-foreground">
-                    <span className="size-2 rounded-full bg-offline" />
-                    <span className="font-semibold text-foreground">{discordMembers}</span> membri
-                  </span>
-                </div>
-              ) : null
-            }
-            href={CREATOR.links.discord}
-            cta="Entra nel server"
-          />
           <SocialCard
             icon={<YouTubeIcon className="size-7" />}
             title="YouTube"
