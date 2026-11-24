@@ -6,17 +6,23 @@ import { SITE } from "@/lib/site-config";
 import { sitemapStaticPaths, sitemapXML } from "./sitemap";
 
 describe("Lounge sitemap", () => {
-  it("includes exactly the three public pages, not the sitemap itself", () => {
+  it("includes exactly the four public pages, not the sitemap itself", () => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
-    expect(sitemapStaticPaths(router)).toEqual(["/", "/changelog", "/timeline"]);
+    expect(sitemapStaticPaths(router)).toEqual(["/", "/changelog", "/momenti", "/timeline"]);
   });
 
   it("uses the official domain and omits unsupported modification dates", () => {
-    const xml = sitemapXML(SITE.url, [{ path: "/" }, { path: "/changelog" }, { path: "/timeline" }]);
+    const xml = sitemapXML(SITE.url, [
+      { path: "/" },
+      { path: "/changelog" },
+      { path: "/momenti" },
+      { path: "/timeline" },
+    ]);
     const document = new DOMParser().parseFromString(xml, "application/xml");
     expect(Array.from(document.querySelectorAll("loc"), (node) => node.textContent)).toEqual([
       "https://www.djgiovy57.it/",
       "https://www.djgiovy57.it/changelog",
+      "https://www.djgiovy57.it/momenti",
       "https://www.djgiovy57.it/timeline",
     ]);
     expect(document.querySelector("lastmod")).toBeNull();

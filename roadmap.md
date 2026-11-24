@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Pagina link-in-bio /momenti per le bio dei profili del progetto, con test e verifica
+
 - [x] Estendere la barra laterale a tutte le pagine, con frecce e trascinamento anche su Timeline e Changelog
 
 - [x] Evidenziare il player durante le live e ricontrollare lo stato al ritorno nella pagina

@@ -22,4 +22,12 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).toBe("/timeline");
   });
+
+  it("matches the Momenti link-in-bio page", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes("/momenti");
+
+    expect(matches.at(-1)?.routeId).toBe("/momenti");
+  });
 });
