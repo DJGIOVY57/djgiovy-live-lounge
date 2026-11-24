@@ -45,7 +45,7 @@ export function TwitchSection({
   followers: number | null;
 }) {
   return (
-    <section id="twitch" aria-labelledby="twitch-title" className="scroll-mt-6 px-5">
+    <section id="twitch" aria-labelledby="twitch-title" data-live={live} className="scroll-mt-6 px-5">
       <div className="surface-card mx-auto max-w-5xl p-4 sm:p-7">
         <div className="mb-5 flex flex-col gap-4 sm:mb-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">

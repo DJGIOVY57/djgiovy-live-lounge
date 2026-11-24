@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Evidenziare il player durante le live e ricontrollare lo stato al ritorno nella pagina
+- [x] Sostituire la barra del browser con scorrimento laterale trascinabile e migliorare i salti tra sezioni
+
 - [x] Scambiare i riquadri Twitch e Gaming Hub nella home e allineare la navigazione laterale
 
 - [x] Creare sitemap automatica per Home, Timeline e Changelog sul dominio ufficiale e collegarla in robots.txt

@@ -25,6 +25,8 @@ const channelStatusQuery = queryOptions({
   queryKey: ["channel-status"],
   queryFn: () => getChannelStatus(),
   refetchInterval: 60_000,
+  refetchOnWindowFocus: "always",
+  refetchOnReconnect: "always",
   staleTime: 30_000,
 });
 
@@ -96,7 +98,7 @@ function Index() {
         <CommunityExtras />
       </main>
       <SiteFooter />
-      <ScrollDock />
+      <ScrollDock live={live} />
       <ScrollReveal />
       <CustomCursor />
       {showToggle && <LiveModeToggle mode={mode} onChange={setMode} />}

@@ -280,6 +280,19 @@
 }
 
 /* Custom dot cursor (mouse devices only, toggled by CustomCursor) */
+html.custom-scrollbar {
+  scrollbar-width: none;
+}
+html.custom-scrollbar::-webkit-scrollbar,
+html.custom-scrollbar body::-webkit-scrollbar {
+  display: none;
+}
+
+#twitch[data-live="true"] > .surface-card {
+  border-color: var(--primary);
+  box-shadow: var(--glow-strong);
+}
+
 html.custom-cursor,
 html.custom-cursor * {
   cursor: none !important;

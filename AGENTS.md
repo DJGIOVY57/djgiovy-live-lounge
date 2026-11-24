@@ -40,6 +40,7 @@ use the editor.
 - Live-indicator logic stays pure in `src/lib/live-status.ts` (covered by tests); the test toggle only shows in dev or with `?test` in the URL.
 - Router uses `setupRouterSsrQueryIntegration` so loader-fetched query data is dehydrated to the client — without it the client refetches and SSR/hydration mismatch.
 - Side scroll dock (`ScrollDock`) and scroll-reveal (`ScrollReveal`) are mounted once in the index route; reveal classes are added by JS only so content stays visible without it, and removed after animating so hover transitions keep working.
+- ScrollDock owns native scrollbar suppression only while mounted and uses an accessible vertical Radix slider; section selection uses the tested reading-line helper so short sections are not skipped.
 - Release history lives newest-first in `src/lib/changelog-data.ts`; the floating badge and `/changelog` read the same current release so version labels cannot drift.
 - Historical milestones live newest-first in `src/lib/timeline-data.ts` and render on `/timeline`, separate from release notes so site history never changes the current version.
 - The "I migliori momenti di Twitch" project keeps its own history newest-first in `src/lib/momenti-timeline-data.ts` and renders as a second, yellow `highlight` block on `/timeline` beside the creator's emerald one, so the two stories stay visually separate and never mix with release notes.
