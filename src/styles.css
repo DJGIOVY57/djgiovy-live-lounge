@@ -135,6 +135,7 @@
   --sidebar-ring: oklch(0.696 0.17 162.5);
 
   --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 100%);
+  --gradient-primary-glow: radial-gradient(60% 60% at 50% 0%, oklch(0.696 0.17 162.5 / 0.16) 0%, transparent 70%);
   --gradient-card: linear-gradient(160deg, oklch(0.235 0.02 160) 0%, var(--card) 55%, oklch(0.185 0.012 160) 100%);
   --gradient-hero: radial-gradient(60% 50% at 50% 0%, oklch(0.696 0.17 162.5 / 0.22) 0%, transparent 70%);
   --glow: 0 0 0 1px oklch(0.696 0.17 162.5 / 0.35), 0 8px 30px -8px oklch(0.696 0.17 162.5 / 0.55);
@@ -220,6 +221,10 @@
 
 @utility bg-gradient-highlight {
   background-image: var(--gradient-highlight);
+}
+
+@utility bg-primary-radial {
+  background-image: var(--gradient-primary-glow);
 }
 
 @utility bg-highlight-radial {

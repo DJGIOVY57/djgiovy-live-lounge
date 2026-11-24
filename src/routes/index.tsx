@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ScrollDock } from "@/components/landing/ScrollDock";
 import { ScrollReveal } from "@/components/landing/ScrollReveal";
 import { CustomCursor } from "@/components/landing/CustomCursor";
+import { DiscordSection } from "@/components/landing/DiscordSection";
 import { Hero } from "@/components/landing/Hero";
 import { CommunityExtras } from "@/components/landing/CommunityExtras";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
@@ -85,6 +86,10 @@ function Index() {
         {/* Programmazione e Clip nascoste: per riattivarle, reimporta ScheduleSection/ClipsSection,
             ripristina twitchExtrasQuery nel loader e renderizzale qui. */}
         <SpotifySection />
+        <DiscordSection
+          members={data.discord.members}
+          online={data.discord.online}
+        />
         <SocialCards
           discordMembers={data.discord.members}
           discordOnline={data.discord.online}
