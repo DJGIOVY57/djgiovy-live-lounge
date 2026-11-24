@@ -12,9 +12,8 @@ describe("Site history dates", () => {
     expect(MILESTONES.find((entry) => entry.title === "Il sito diventa la Lounge")?.date).toBe("2026-11-23");
   });
 
-  it("keeps historical milestones out of release notes", () => {
-    const historicalDates = new Set<string>(MILESTONES.map((milestone) => milestone.date));
-    expect(RELEASES.some((release) => historicalDates.has(release.date))).toBe(false);
+  it("dates the first release the day the Lounge began", () => {
+    expect(RELEASES[0]?.date).toBe("2026-11-23");
     expect(RELEASES.map((release) => release.version)).toEqual(["0.1"]);
   });
 });

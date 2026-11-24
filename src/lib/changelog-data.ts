@@ -3,7 +3,7 @@ export const RELEASES = [
   {
     version: "0.1",
     stage: "ALPHA",
-    date: "2026-11-24",
+    date: "2026-11-23",
     title: "La Lounge prende forma",
     groups: [
       {
