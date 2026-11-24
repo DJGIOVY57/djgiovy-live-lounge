@@ -71,13 +71,6 @@ export function SocialCards({
         <div className="grid gap-5 md:grid-cols-2">
           <SocialCard
             className="md:col-span-2"
-            icon={<YouTubeIcon className="size-7" />}
-            title="YouTube"
-            subtitle="Canale ufficiale"
-            href={CREATOR.links.youtube}
-            cta="Iscriviti al canale"
-          />
-          <SocialCard
             icon={<DiscordIcon className="size-7" />}
             title="Discord"
             subtitle="Server della community"
@@ -98,6 +91,13 @@ export function SocialCards({
             }
             href={CREATOR.links.discord}
             cta="Entra nel server"
+          />
+          <SocialCard
+            icon={<YouTubeIcon className="size-7" />}
+            title="YouTube"
+            subtitle="Canale ufficiale"
+            href={CREATOR.links.youtube}
+            cta="Iscriviti al canale"
           />
           <SocialCard
             icon={<XIcon className="size-6" />}
