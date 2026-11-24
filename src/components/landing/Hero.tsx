@@ -1,13 +1,17 @@
 import { CREATOR } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
+import { Equalizer } from "./Equalizer";
 import { LiveBadge } from "./LiveBadge";
+import { Particles } from "./Particles";
+import { ShareButton } from "./ShareButton";
 
 export function Hero({ live, avatarUrl }: { live: boolean; avatarUrl: string | null }) {
   return (
     <header className="relative overflow-hidden px-5 pt-20 pb-14 sm:pt-28 sm:pb-20">
       <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
       <div className="pointer-events-none absolute inset-0 bg-hero-glow" aria-hidden />
+      <Particles />
 
       <div className="relative mx-auto flex max-w-2xl flex-col items-center text-center">
         {/* Avatar with glowing ring — the ring pulses harder while live */}
@@ -45,6 +49,12 @@ export function Hero({ live, avatarUrl }: { live: boolean; avatarUrl: string | n
         <p className="mt-4 max-w-md animate-fade-up text-base leading-relaxed text-muted-foreground [animation-delay:280ms] sm:text-lg">
           {CREATOR.bio}
         </p>
+
+        <Equalizer live={live} className="mt-8 animate-fade-up [animation-delay:340ms]" />
+
+        <div className="mt-8 animate-fade-up [animation-delay:400ms]">
+          <ShareButton />
+        </div>
       </div>
     </header>
   );

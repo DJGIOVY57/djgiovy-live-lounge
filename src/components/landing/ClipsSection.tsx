@@ -82,7 +82,7 @@ export function ClipsSection({ clips }: { clips: TwitchClip[] }) {
                     </span>
                   </span>
                   <span className="absolute right-2 bottom-2 rounded-md bg-background/80 px-1.5 py-0.5 text-xs font-semibold text-foreground">
-                    0:{String(clip.durationSeconds).padStart(2, "0")}
+                    {Math.floor(clip.durationSeconds / 60)}:{String(clip.durationSeconds % 60).padStart(2, "0")}
                   </span>
                 </div>
                 <div className="p-4">

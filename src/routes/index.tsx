@@ -2,15 +2,19 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
+import { ClipsSection } from "@/components/landing/ClipsSection";
 import { Hero } from "@/components/landing/Hero";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
 import { MomentiSection } from "@/components/landing/MomentiSection";
+import { ScheduleSection } from "@/components/landing/ScheduleSection";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SocialCards } from "@/components/landing/SocialCards";
+import { SoundboardSection } from "@/components/landing/SoundboardSection";
 import { SpotifySection } from "@/components/landing/SpotifySection";
 import { TwitchSection } from "@/components/landing/TwitchSection";
 import { getChannelStatus } from "@/lib/channel.functions";
 import { resolveIsLive, type LiveMode } from "@/lib/live-status";
+import { getTwitchExtras } from "@/lib/twitch-extras.functions";
 
 // Real status is re-checked every 60s while the page is open.
 const channelStatusQuery = queryOptions({
@@ -20,14 +24,26 @@ const channelStatusQuery = queryOptions({
   staleTime: 30_000,
 });
 
+// Clips and schedule change rarely: refresh every 10 minutes.
+const twitchExtrasQuery = queryOptions({
+  queryKey: ["twitch-extras"],
+  queryFn: () => getTwitchExtras(),
+  refetchInterval: 600_000,
+  staleTime: 300_000,
+});
+
 const TITLE = "DJGIOVY57 — Live su Twitch, musica e social";
 const DESCRIPTION =
-  "Il punto d'incontro di DJGIOVY57: live su Twitch, playlist Spotify, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok. Più il progetto I migliori momenti di Twitch.";
+  "Il punto d'incontro di DJGIOVY57: live su Twitch con programmazione e clip, playlist Spotify, soundboard, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok. Più il progetto I migliori momenti di Twitch.";
 
 export const Route = createFileRoute("/")({
   validateSearch: (search: Record<string, unknown>): { test?: string } =>
     search["test"] !== undefined ? { test: String(search["test"]) } : {},
-  loader: ({ context }) => context.queryClient.ensureQueryData(channelStatusQuery),
+  loader: ({ context }) =>
+    Promise.all([
+      context.queryClient.ensureQueryData(channelStatusQuery),
+      context.queryClient.ensureQueryData(twitchExtrasQuery),
+    ]),
   head: () => ({
     meta: [
       { title: TITLE },
@@ -43,6 +59,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const { data } = useSuspenseQuery(channelStatusQuery);
+  const { data: extras } = useSuspenseQuery(twitchExtrasQuery);
   const { test } = Route.useSearch();
   // "auto" = real Twitch status; the toggle can force live/offline for testing.
   const [mode, setMode] = useState<LiveMode>("auto");
@@ -58,7 +75,10 @@ function Index() {
           uptime={mode === "auto" ? data.twitch.uptime : null}
           followers={data.twitch.followers}
         />
+        <ScheduleSection segments={extras.schedule} checkedAt={extras.checkedAt} live={live} />
+        <ClipsSection clips={extras.clips} />
         <SpotifySection />
+        <SoundboardSection />
         <SocialCards
           discordMembers={data.discord.members}
           discordOnline={data.discord.online}
