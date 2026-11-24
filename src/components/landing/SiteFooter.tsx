@@ -46,6 +46,7 @@ export function SiteFooter({ children }: { children?: ReactNode }) {
             <span className="font-semibold text-foreground">{CREATOR.name}</span>. Tutti i diritti
             riservati.
           </p>
+          <nav aria-label="Informazioni sul sito" className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
           <Button
             asChild
             variant="link"
@@ -54,6 +55,10 @@ export function SiteFooter({ children }: { children?: ReactNode }) {
           >
             <Link to="/changelog">Note di rilascio</Link>
           </Button>
+          <Button asChild variant="link" size="sm" className="h-auto px-0 py-1 text-muted-foreground hover:text-primary">
+            <Link to="/timeline">Timeline</Link>
+          </Button>
+          </nav>
         </div>
         <nav aria-label="Social" className="flex flex-wrap items-center justify-center gap-3">
           <FooterLink href={CREATOR.links.twitch} label="Twitch">

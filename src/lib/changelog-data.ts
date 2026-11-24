@@ -33,34 +33,6 @@ export const RELEASES = [
       },
     ],
   },
-  {
-    version: null,
-    stage: "STORIA",
-    date: "2026-11-23",
-    title: "Il sito diventa la Lounge",
-    groups: [
-      {
-        label: "Evoluzione",
-        items: [
-          "Il sito di DJGIOVY57 si evolve nella Lounge attuale: un nuovo capitolo dell’idea nata nel 2021.",
-        ],
-      },
-    ],
-  },
-  {
-    version: null,
-    stage: "STORIA",
-    date: "2021-10-25",
-    title: "Nasce il sito di DJGIOVY57",
-    groups: [
-      {
-        label: "Le origini",
-        items: [
-          "Nasce il sito di DJGIOVY57, il risultato di un’idea iniziale destinata a migliorare e crescere nel tempo.",
-        ],
-      },
-    ],
-  },
 ] as const;
 
 export const CURRENT_RELEASE = RELEASES[0];
