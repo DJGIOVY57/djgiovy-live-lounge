@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Rimuovere l’easter egg del logo e correggere la condivisione su https://www.djgiovy57.it (test e verifica nel sito)
+
 - [x] Accantonare i comandi Twitch su richiesta, rimuovendo la parte predisposta
 - [x] FAQ, condivisione nativa/copia link, easter egg e abbonamento Twitch
 - [x] Verifica desktop/mobile: copia reale, FAQ, sorpresa e link Twitch; condivisione nativa e annullamento simulati

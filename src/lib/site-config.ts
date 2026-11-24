@@ -2,7 +2,7 @@ import loungeCover from "@/assets/lounge-cover.jpg.asset.json";
 
 export const SITE = {
   title: "DJGIOVY57's Lounge",
-  url: "https://djgiovy-live-lounge.lovable.app",
+  url: "https://www.djgiovy57.it",
   description: "Il punto d'incontro di DJGIOVY57: live su Twitch, playlist Spotify, video su YouTube, community Discord e aggiornamenti su X, Instagram e TikTok. Più il progetto I migliori momenti di Twitch.",
   shareImage: `https://djgiovy-live-lounge.lovable.app${loungeCover.url}`,
 } as const;
@@ -35,8 +35,6 @@ export const CREATOR = {
 
 export const COMMUNITY: {
   faqs: { question: string; answer: string; href?: string; linkLabel?: string }[];
-  secretTitle: string;
-  secretMessage: string;
 } = {
   faqs: [
     {
@@ -64,8 +62,6 @@ export const COMMUNITY: {
       linkLabel: "Scopri il progetto su TikTok",
     },
   ],
-  secretTitle: "Sei nel cuore della Lounge 💚",
-  secretMessage: "Hai trovato l’angolo segreto della community. Grazie per esserci, in live e fuori: questa Lounge è anche tua.",
 };
 
 /** "I migliori momenti di Twitch" — separate project founded by the creator (yellow accent). */
