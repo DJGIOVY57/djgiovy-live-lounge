@@ -15,11 +15,11 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 
-  it("matches the Momenti project timeline page", () => {
+  it("matches the timeline page", () => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 
-    const matches = router.matchRoutes("/momenti-timeline");
+    const matches = router.matchRoutes("/timeline");
 
-    expect(matches.at(-1)?.routeId).toBe("/momenti-timeline");
+    expect(matches.at(-1)?.routeId).toBe("/timeline");
   });
 });

@@ -64,7 +64,8 @@ export function MomentiSection() {
               {MOMENTI.name}
             </h2>
             <Link
-              to="/momenti-timeline"
+              to="/timeline"
+              hash="momenti"
               className="mt-4 inline-flex items-center gap-2 font-display text-sm font-semibold text-highlight underline-offset-4 transition hover:underline"
             >
               <Milestone className="size-4" aria-hidden="true" />

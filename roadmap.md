@@ -1,6 +1,6 @@
 # Roadmap
 
-- [x] Timeline de "I migliori momenti di Twitch" su pagina separata in giallo, collegata da sezione e footer
+- [x] Unire le due timeline in un'unica pagina /timeline: blocco verde del sito e blocco giallo del progetto
 - [x] Sostituire le tappe provvisorie della timeline Momenti con quelle reali (nascita pagina TikTok 15/03/2022, primo traguardo 17/03/2022)
 
 - [x] Separare le tappe storiche nella pagina Timeline e mantenere il Changelog per le versioni

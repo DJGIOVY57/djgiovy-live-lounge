@@ -58,9 +58,6 @@ export function SiteFooter({ children }: { children?: ReactNode }) {
           <Button asChild variant="link" size="sm" className="h-auto px-0 py-1 text-muted-foreground hover:text-primary">
             <Link to="/timeline">Timeline</Link>
           </Button>
-          <Button asChild variant="link" size="sm" className="h-auto px-0 py-1 text-muted-foreground hover:text-highlight">
-            <Link to="/momenti-timeline">Timeline Momenti</Link>
-          </Button>
           </nav>
         </div>
         <nav aria-label="Social" className="flex flex-wrap items-center justify-center gap-3">
