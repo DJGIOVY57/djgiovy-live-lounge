@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Scambiare i riquadri Twitch e Gaming Hub nella home e allineare la navigazione laterale
+
 - [x] Creare sitemap automatica per Home, Timeline e Changelog sul dominio ufficiale e collegarla in robots.txt
 
 - [x] Sostituire "Contatto diretto" con "Stanze per ogni gioco" nella sezione Discord (GTA, FIFA, Fortnite, Minecraft, Rainbow Six Siege, e tanti altri)

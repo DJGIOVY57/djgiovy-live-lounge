@@ -79,17 +79,17 @@ function Index() {
       />}
       <Hero live={live} avatarUrl={data.twitch.avatarUrl} />
       <main className="space-y-20 sm:space-y-28">
-        <TwitchSection
-          live={live}
-          uptime={mode === "auto" ? data.twitch.uptime : null}
-          followers={data.twitch.followers}
+        <DiscordSection
+          members={data.discord.members}
+          online={data.discord.online}
         />
         {/* Programmazione e Clip nascoste: per riattivarle, reimporta ScheduleSection/ClipsSection,
             ripristina twitchExtrasQuery nel loader e renderizzale qui. */}
         <SpotifySection />
-        <DiscordSection
-          members={data.discord.members}
-          online={data.discord.online}
+        <TwitchSection
+          live={live}
+          uptime={mode === "auto" ? data.twitch.uptime : null}
+          followers={data.twitch.followers}
         />
         <SocialCards />
         <MomentiSection />

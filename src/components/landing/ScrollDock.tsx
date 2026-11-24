@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 
 const SECTIONS = [
   { id: "top", label: "Inizio" },
-  { id: "twitch", label: "Twitch" },
-  { id: "spotify", label: "Spotify" },
   { id: "discord", label: "Gaming Hub" },
+  { id: "spotify", label: "Spotify" },
+  { id: "twitch", label: "Twitch" },
   { id: "community", label: "Community" },
   { id: "momenti", label: "I migliori momenti" },
 ];
