@@ -1,7 +1,7 @@
 /** Newest first. Record actual shipped changes, never planned features. */
 export const RELEASES = [
   {
-    version: "2.0",
+    version: "0.1",
     stage: "ALPHA",
     date: "2026-11-23",
     title: "La Lounge prende forma",
