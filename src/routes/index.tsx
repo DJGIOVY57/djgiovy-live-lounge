@@ -2,6 +2,7 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
+import { CustomCursor } from "@/components/landing/CustomCursor";
 import { Hero } from "@/components/landing/Hero";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
 import { MomentiSection } from "@/components/landing/MomentiSection";
@@ -71,6 +72,7 @@ function Index() {
         <MomentiSection />
       </main>
       <SiteFooter />
+      <CustomCursor />
       {showToggle && <LiveModeToggle mode={mode} onChange={setMode} />}
     </div>
   );

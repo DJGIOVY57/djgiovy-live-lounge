@@ -269,3 +269,9 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Custom dot cursor (mouse devices only, toggled by CustomCursor) */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
