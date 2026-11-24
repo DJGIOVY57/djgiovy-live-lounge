@@ -30,7 +30,7 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
-- Community FAQ, confirmed Twitch commands and secret-message copy live in site-config; browser-only share/copy and avatar interactions remain client event handlers to avoid server dependencies and invented bot commands.
+- Community FAQ and secret-message copy live in site-config; browser-only share/copy and avatar interactions remain client event handlers to avoid server dependencies.
 - Creator info and links live only in `src/lib/site-config.ts`; components read from it so copy changes are one-file edits.
 - External status data (Twitch live/avatar/followers/title/category, Discord counts) is fetched in the `getChannelStatus` server function, never from the browser — avoids CORS and keeps future API keys server-side.
 - Mount the live notification only during a live session; dismissal is component-local so a subsequent live can show it again without persistent visitor tracking.

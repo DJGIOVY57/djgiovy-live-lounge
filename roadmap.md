@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Comandi Twitch copiabili (attesa elenco reale dell’utente)
+- [x] Accantonare i comandi Twitch su richiesta, rimuovendo la parte predisposta
 - [x] FAQ, condivisione nativa/copia link, easter egg e abbonamento Twitch
 - [x] Verifica desktop/mobile: copia reale, FAQ, sorpresa e link Twitch; condivisione nativa e annullamento simulati
 

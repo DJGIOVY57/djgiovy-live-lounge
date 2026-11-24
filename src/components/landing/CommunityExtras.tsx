@@ -1,41 +1,13 @@
-import { useState } from "react";
-import { ArrowUpRight, Check, Copy, Heart, MessageSquare } from "lucide-react";
+import { ArrowUpRight, Heart } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { COMMUNITY, CREATOR } from "@/lib/site-config";
 
 export function CommunityExtras() {
-  const [copied, setCopied] = useState<string | null>(null);
-  const [error, setError] = useState("");
-
-  async function copyCommand(command: string) {
-    try {
-      await navigator.clipboard.writeText(command);
-      setCopied(command);
-      setError("");
-    } catch {
-      setError("Copia non disponibile: puoi selezionare il comando e copiarlo.");
-    }
-  }
-
   return (
     <section id="lounge-community" aria-labelledby="extras-title" className="px-5">
       <div className="mx-auto max-w-5xl">
         <h2 id="extras-title" className="text-center font-display text-3xl font-bold sm:text-4xl">Ci vediamo in chat</h2>
-        {COMMUNITY.commands.length > 0 && (
-          <div className="mt-8 border-y border-border py-6">
-            <h3 className="flex items-center gap-2 text-xl font-semibold"><MessageSquare className="size-5 text-primary" /> Comandi Twitch</h3>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {COMMUNITY.commands.map(({ command, description }) => (
-                <div key={command} className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card p-4">
-                  <div className="min-w-0"><code className="text-primary">{command}</code><p className="mt-1 text-sm text-muted-foreground">{description}</p></div>
-                  <Button variant="ghost" size="icon" aria-label={`Copia ${command}`} title={`Copia ${command}`} onClick={() => copyCommand(command)}>{copied === command ? <Check /> : <Copy />}</Button>
-                </div>
-              ))}
-            </div>
-            <p role="status" className="mt-2 text-sm text-primary">{error || (copied ? `${copied} copiato` : "")}</p>
-          </div>
-        )}
         <div className="mt-8 grid gap-10 md:grid-cols-[1.4fr_1fr] md:gap-14">
           <div>
             <h3 className="mb-3 font-display text-xl font-semibold">Domande frequenti</h3>

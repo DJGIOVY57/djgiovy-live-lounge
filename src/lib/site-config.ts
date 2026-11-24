@@ -34,13 +34,10 @@ export const CREATOR = {
 } as const;
 
 export const COMMUNITY: {
-  commands: { command: string; description: string }[];
   faqs: { question: string; answer: string; href?: string; linkLabel?: string }[];
   secretTitle: string;
   secretMessage: string;
 } = {
-  // Only publish commands confirmed by the creator.
-  commands: [],
   faqs: [
     {
       question: "Dove posso seguire le dirette?",
