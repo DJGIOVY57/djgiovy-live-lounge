@@ -239,9 +239,9 @@
 }
 
 @keyframes pulse-dot {
-  0% { box-shadow: 0 0 0 0 oklch(0.765 0.2 150 / 0.7); }
-  70% { box-shadow: 0 0 0 10px oklch(0.765 0.2 150 / 0); }
-  100% { box-shadow: 0 0 0 0 oklch(0.765 0.2 150 / 0); }
+  0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--pulse-color, oklch(0.765 0.2 150)) 70%, transparent); }
+  70% { box-shadow: 0 0 0 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 
 @keyframes ring-glow {
