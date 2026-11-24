@@ -3,6 +3,8 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
+import { ScrollDock } from "@/components/landing/ScrollDock";
+import { ScrollReveal } from "@/components/landing/ScrollReveal";
 import { CustomCursor } from "@/components/landing/CustomCursor";
 import { Hero } from "@/components/landing/Hero";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
@@ -74,6 +76,8 @@ function Index() {
         <MomentiSection />
       </main>
       <SiteFooter />
+      <ScrollDock />
+      <ScrollReveal />
       <CustomCursor />
       {showToggle && <LiveModeToggle mode={mode} onChange={setMode} />}
     </div>
