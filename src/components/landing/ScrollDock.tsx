@@ -5,7 +5,7 @@ const SECTIONS = [
   { id: "top", label: "Inizio" },
   { id: "twitch", label: "Twitch" },
   { id: "spotify", label: "Spotify" },
-  { id: "discord", label: "Discord" },
+  { id: "discord", label: "Gaming Hub" },
   { id: "community", label: "Community" },
   { id: "momenti", label: "I migliori momenti" },
 ];

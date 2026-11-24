@@ -64,7 +64,7 @@ export function SiteFooter({ children }: { children?: ReactNode }) {
           <FooterLink href={CREATOR.links.twitch} label="Twitch">
             <TwitchIcon className="size-5" />
           </FooterLink>
-          <FooterLink href={CREATOR.links.discord} label="Discord">
+          <FooterLink href={CREATOR.links.discord} label="Gaming Hub (Discord)">
             <DiscordIcon className="size-5" />
           </FooterLink>
           <FooterLink href={CREATOR.links.x} label="X (Twitter)">

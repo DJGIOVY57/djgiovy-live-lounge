@@ -53,7 +53,7 @@ export const COMMUNITY: {
       question: "Dove posso incontrare la community?",
       answer: "Sul server Discord della community: ci ritroviamo anche fuori dalle dirette.",
       href: CREATOR.links.discord,
-      linkLabel: "Entra su Discord",
+      linkLabel: "Entra nel Gaming Hub",
     },
     {
       question: "Cos’è I migliori momenti di Twitch?",
@@ -64,8 +64,13 @@ export const COMMUNITY: {
   ],
 };
 
-/** Discord server: dedicated voice rooms per game, plus the "and many more" hint. */
+/**
+ * Gaming Hub: the Discord server founded by the creator.
+ * Dedicated voice rooms per game, plus the "and many more" hint.
+ */
 export const DISCORD = {
+  name: "GAMING HUB",
+  role: "Founder",
   games: ["GTA", "FIFA", "Fortnite", "Minecraft", "Rainbow Six Siege"],
   gamesTail: "e tanti altri",
 } as const;

@@ -37,14 +37,17 @@ export function DiscordSection({
         <div className="relative">
           <div className="mb-8 text-center">
             <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              Il cuore della community
+              Un mio progetto · {DISCORD.role}
             </p>
             <h2
               id="discord-title"
               className="mt-3 font-display text-3xl font-bold uppercase text-gradient-primary sm:text-4xl"
             >
-              Server Discord
+              {DISCORD.name}
             </h2>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Il server Discord fondato da {CREATOR.name}
+            </p>
           </div>
 
           <article className="surface-card surface-card-interactive flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
@@ -54,9 +57,9 @@ export function DiscordSection({
               </span>
               <div className="min-w-0">
                 <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-primary">
-                  Entra nella Lounge
+                  Il cuore della community
                 </p>
-                <h3 className="font-display text-2xl font-bold text-foreground">Discord</h3>
+                <h3 className="font-display text-2xl font-bold text-foreground">{DISCORD.name}</h3>
                 {members !== null ? (
                   <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
                     <span className="inline-flex items-center gap-1.5">
@@ -73,7 +76,7 @@ export function DiscordSection({
             </div>
             <Button asChild variant="glow" size="xl" className="w-full sm:w-auto">
               <a href={CREATOR.links.discord} target="_blank" rel="noopener noreferrer">
-                Entra nel server <ArrowUpRight />
+                Entra nel Gaming Hub <ArrowUpRight />
               </a>
             </Button>
           </article>
