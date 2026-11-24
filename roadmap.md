@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Logo Twitch verde e lampeggiante in live, grigio e statico offline (verificato con cambio di stato simulato)
+
 - [x] Rimuovere l’easter egg del logo e correggere la condivisione su https://www.djgiovy57.it (test e verifica nel sito)
 
 - [x] Accantonare i comandi Twitch su richiesta, rimuovendo la parte predisposta

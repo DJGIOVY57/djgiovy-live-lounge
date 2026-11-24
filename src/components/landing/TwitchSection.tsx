@@ -49,7 +49,7 @@ export function TwitchSection({
       <div className="surface-card mx-auto max-w-5xl p-4 sm:p-7">
         <div className="mb-5 flex flex-col gap-4 sm:mb-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
-            <span className="flex size-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+            <span className={`flex size-12 items-center justify-center rounded-xl ring-1 ${live ? "bg-primary/15 text-primary ring-primary/30" : "bg-offline/15 text-offline ring-offline/30"}`}>
               <TwitchIcon className={live ? "size-6 motion-safe:animate-pulse" : "size-6"} />
             </span>
             <div>
