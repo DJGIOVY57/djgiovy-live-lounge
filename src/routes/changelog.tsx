@@ -61,7 +61,7 @@ function ChangelogPage() {
 
         <ol aria-label="Cronologia degli aggiornamenti" className="ml-2 border-l border-border">
           {RELEASES.map((release) => (
-            <li key={`${release.stage}-${release.version}`} className="relative pb-8 pl-6 sm:pl-10">
+            <li key={`${release.date}-${release.title}`} className="relative pb-8 pl-6 sm:pl-10">
               <span
                 aria-hidden="true"
                 className="absolute -left-1.5 top-6 size-3 rounded-full bg-release shadow-release"
@@ -69,7 +69,7 @@ function ChangelogPage() {
               <article className="surface-card p-5 sm:p-8">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="rounded-full border border-release/40 bg-release/10 px-3 py-1 font-display text-xs font-semibold text-release">
-                    {release.stage} v{release.version}
+                    {release.version === null ? "La storia del sito" : `${release.stage} v${release.version}`}
                   </span>
                   {release === CURRENT_RELEASE && (
                     <span className="text-xs font-medium text-primary">Versione attuale</span>
