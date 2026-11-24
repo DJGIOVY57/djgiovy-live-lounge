@@ -6,7 +6,7 @@ export const CREATOR = {
   name: "DJGIOVY57",
   handle: "DJGIOVY57",
   // TODO: bio definitiva da inserire (1–2 righe).
-  bio: "Streamer e content creator",
+  bio: "Streamer Affiliato di Twitch e content creator",
   twitchChannel: "djgiovy57",
   discordInviteCode: "yXrD3hq5Pv",
   spotifyPlaylistId: "1vVSr9M4dADCIm5a8B0xYl",
