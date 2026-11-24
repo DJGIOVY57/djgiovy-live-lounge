@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, CalendarDays, Check, History, Palette, Sparkles } from "lucide-react";
+import { ArrowLeft, CalendarDays, Check, Flag, History, Palette, Sparkles } from "lucide-react";
 
 import { CustomCursor } from "@/components/landing/CustomCursor";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -78,8 +78,12 @@ function ChangelogPage() {
                 <h2 className="mt-5 font-display text-2xl font-bold tracking-normal sm:text-3xl">
                   {release.title}
                 </h2>
-                <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
-                  <CalendarDays className="size-4" aria-hidden="true" />
+                <div className={release.stage === "STORIA"
+                  ? "mt-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-lg border border-release/40 bg-release/10 px-3 py-2 font-display text-base font-semibold text-release"
+                  : "mt-3 flex items-center gap-2 text-sm text-muted-foreground"}>
+                  {release.stage === "STORIA"
+                    ? <Flag className="size-4 shrink-0" aria-hidden="true" />
+                    : <CalendarDays className="size-4 shrink-0" aria-hidden="true" />}
                   <time dateTime={release.date}>
                     {new Intl.DateTimeFormat("it-IT", {
                       day: "numeric",
