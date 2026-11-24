@@ -5,13 +5,11 @@ import { Button } from "@/components/ui/button";
 import { CREATOR } from "@/lib/site-config";
 
 import { DiscordIcon, InstagramIcon, TikTokIcon, XIcon, YouTubeIcon } from "./BrandIcons";
-import { FollowerCount } from "./FollowerCount";
 
 function SocialCard({
   icon,
   title,
   subtitle,
-  followers = null,
   extra,
   href,
   cta,
@@ -20,7 +18,6 @@ function SocialCard({
   icon: ReactNode;
   title: string;
   subtitle: string;
-  followers?: number | null;
   extra?: ReactNode;
   href: string;
   cta: string;
@@ -35,11 +32,6 @@ function SocialCard({
         <div>
           <h3 className="font-display text-xl font-bold text-foreground">{title}</h3>
           <p className="text-sm font-medium text-primary">{subtitle}</p>
-          {followers !== null && (
-            <div className="mt-1">
-              <FollowerCount count={followers} />
-            </div>
-          )}
         </div>
       </div>
       {extra}
@@ -82,7 +74,6 @@ export function SocialCards({
             icon={<YouTubeIcon className="size-7" />}
             title="YouTube"
             subtitle="Canale ufficiale"
-            followers={CREATOR.followers.youtube}
             href={CREATOR.links.youtube}
             cta="Iscriviti al canale"
           />
@@ -112,7 +103,6 @@ export function SocialCards({
             icon={<XIcon className="size-6" />}
             title="X (Twitter)"
             subtitle={`@${CREATOR.handle}`}
-            followers={CREATOR.followers.x}
             href={CREATOR.links.x}
             cta="Segui su X"
           />
@@ -120,7 +110,6 @@ export function SocialCards({
             icon={<InstagramIcon className="size-7" />}
             title="Instagram"
             subtitle={`@${CREATOR.handle.toLowerCase()}`}
-            followers={CREATOR.followers.instagram}
             href={CREATOR.links.instagram}
             cta="Segui su Instagram"
           />
@@ -128,7 +117,6 @@ export function SocialCards({
             icon={<TikTokIcon className="size-6" />}
             title="TikTok"
             subtitle={`@${CREATOR.handle.toLowerCase()}`}
-            followers={CREATOR.followers.tiktok}
             href={CREATOR.links.tiktok}
             cta="Segui su TikTok"
           />

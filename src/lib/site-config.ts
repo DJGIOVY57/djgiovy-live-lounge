@@ -18,14 +18,8 @@ export const CREATOR = {
     spotify: "https://open.spotify.com/playlist/1vVSr9M4dADCIm5a8B0xYl",
     instagram: "https://www.instagram.com/djgiovy57",
     tiktok: "https://www.tiktok.com/@djgiovy57",
-  },
-  // Follower counts shown on the social cards (number only, like Twitch).
-  // Update by hand when they change; null hides the indicator.
-  followers: {
-    youtube: 124,
-    tiktok: 124,
-    instagram: null as number | null,
-    x: null as number | null,
+    twitchClips: "https://www.twitch.tv/djgiovy57/clips?filter=clips&range=all",
+    twitchSchedule: "https://www.twitch.tv/djgiovy57/schedule",
   },
 } as const;
 
@@ -40,10 +34,5 @@ export const MOMENTI = {
     youtube: "https://www.youtube.com/channel/UCt8e66zPggfsQrDPxPpBJUg?sub_confirmation=1",
     x: "https://twitter.com/MOMENTIDITWITCH",
   },
-  followers: {
-    tiktok: 641,
-    youtube: 74,
-    instagram: null as number | null,
-    x: null as number | null,
-  },
 } as const;
+
