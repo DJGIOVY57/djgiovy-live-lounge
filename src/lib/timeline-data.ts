@@ -12,6 +12,6 @@ export const MILESTONES = [
     title: "Nasce il sito di DJGIOVY57",
     label: "Le origini",
     description:
-      "Nasce il sito di DJGIOVY57, il risultato di un’idea iniziale destinata a migliorare e crescere nel tempo.",
+      "Nasce la primissima versione del sito su Google Sites, senza un dominio proprietario: una vetrina essenziale nata per gioco, ma primo vero tassello di un’idea destinata a evolversi.",
   },
 ] as const;
