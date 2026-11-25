@@ -2,10 +2,11 @@ import { describe, expect, it } from "vitest";
 import { nextFollowerGoal } from "./follower-goal";
 
 describe("nextFollowerGoal", () => {
-  it("picks the next milestone above the current count", () => {
-    expect(nextFollowerGoal(0)).toEqual({ goal: 100, percent: 0 });
-    expect(nextFollowerGoal(620).goal).toBe(750);
-    expect(nextFollowerGoal(750).goal).toBe(1000);
-    expect(nextFollowerGoal(1200)).toEqual({ goal: 2500, percent: 48 });
+  it("current road is 200 followers", () => {
+    expect(nextFollowerGoal(176)).toEqual({ goal: 200, percent: 88 });
+  });
+  it("then moves to the next milestone", () => {
+    expect(nextFollowerGoal(200).goal).toBe(500);
+    expect(nextFollowerGoal(0).goal).toBe(100);
   });
 });
