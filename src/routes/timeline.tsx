@@ -8,7 +8,7 @@ import { CREATOR, MOMENTI, SITE } from "@/lib/site-config";
 import { MILESTONES } from "@/lib/timeline-data";
 
 const TITLE = `Timeline — ${CREATOR.name}'s Lounge`;
-const DESCRIPTION = `Le tappe del sito di ${CREATOR.name} e de ${MOMENTI.name}, dalle origini nel 2021 alla Lounge di oggi.`;
+const DESCRIPTION = `Le tappe del sito di ${CREATOR.name} e de ${MOMENTI.name}, dalla prima live del 2020 alla Lounge di oggi.`;
 
 export const Route = createFileRoute("/timeline")({
   staticData: { sitemap: true },
@@ -193,7 +193,7 @@ function TimelinePage() {
             tone="primary"
             kicker="Il sito"
             title={`${CREATOR.name}'s Lounge`}
-            intro="Dall'idea iniziale del 2021 alla Lounge di oggi."
+            intro="Dalla prima live del 2020 alla Lounge di oggi."
             milestones={MILESTONES}
           />
           <HistoryBlock

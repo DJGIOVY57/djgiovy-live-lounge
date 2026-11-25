@@ -21,4 +21,11 @@ export const MILESTONES = [
     description:
       "Nasce la primissima versione del sito su Google Sites, senza un dominio proprietario: una vetrina essenziale nata per gioco, ma primo vero tassello di un’idea destinata a evolversi.",
   },
+  {
+    date: "2020-12-09",
+    title: "La prima live su Twitch",
+    label: "Il debutto",
+    description:
+      "Si accende per la prima volta la diretta sul canale djgiovy57: l’inizio del percorso da streamer, prima ancora della nascita del sito e della community.",
+  },
 ] as const;

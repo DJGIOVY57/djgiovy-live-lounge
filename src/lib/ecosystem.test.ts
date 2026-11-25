@@ -3,8 +3,8 @@ import { describe, expect, it } from "vitest";
 import { ECOSYSTEM } from "./site-config";
 
 describe("Ecosystem facts", () => {
-  it("starts in 2021", () => {
-    expect(ECOSYSTEM.startYear).toBe(2021);
+  it("starts in 2020 with the first Twitch live", () => {
+    expect(ECOSYSTEM.startYear).toBe(2020);
   });
 
   it("has two founded projects", () => {
@@ -14,7 +14,7 @@ describe("Ecosystem facts", () => {
 
   it("shows the Twitch affiliate badge and the years of community", () => {
     expect(ECOSYSTEM.twitchAffiliate).toBe(true);
-    expect(ECOSYSTEM.yearsLabel).toBe("5+");
+    expect(ECOSYSTEM.yearsLabel).toBe("6+");
   });
 
   it("dates Gaming Hub to November 2021", () => {

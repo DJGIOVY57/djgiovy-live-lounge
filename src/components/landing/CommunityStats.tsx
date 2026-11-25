@@ -17,7 +17,7 @@ export function CommunityStats() {
       icon: Milestone,
       value: String(ECOSYSTEM.startYear),
       label: "Anno di partenza",
-      detail: "Dalla prima pagina Google Sites alla Lounge attuale.",
+      detail: "9 dicembre 2020: la prima live su Twitch che ha dato inizio a tutto.",
     },
     {
       icon: Crown,
@@ -35,8 +35,8 @@ export function CommunityStats() {
     {
       icon: CalendarRange,
       value: ECOSYSTEM.yearsLabel,
-      label: "Anni di community",
-      detail: "Dal 2021 a oggi, cresciuta live dopo live.",
+      label: "Anni di streaming",
+      detail: "Dal 2020 a oggi, live dopo live.",
     },
   ];
 
