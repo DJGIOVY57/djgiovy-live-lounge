@@ -1,5 +1,5 @@
 import { useHydrated } from "@tanstack/react-router";
-import { ExternalLink, Maximize2, Minimize2, Target, Users } from "lucide-react";
+import { ExternalLink, Maximize2, Minimize2, Play, Target, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { nextFollowerGoal } from "@/lib/follower-goal";
@@ -15,9 +15,9 @@ import { LiveBadge } from "./LiveBadge";
  * served from, so it is read from window.location.hostname after hydration —
  * this works on the preview, the published site and any custom domain.
  */
-function TwitchPlayer({ cinema }: { cinema: boolean }) {
+function TwitchPlayer({ cinema, active, onActivate }: { cinema: boolean; active: boolean; onActivate: () => void }) {
   const hydrated = useHydrated();
-  const parent = hydrated ? window.location.hostname : null;
+  const parent = hydrated && active ? window.location.hostname : null;
 
   return (
     <div
@@ -35,9 +35,20 @@ function TwitchPlayer({ cinema }: { cinema: boolean }) {
           loading="lazy"
           className="absolute inset-0 size-full"
         />
-      ) : (
+      ) : active ? (
         <div className="absolute inset-0 flex items-center justify-center">
           <TwitchIcon className="size-10 animate-pulse text-primary/60" />
+        </div>
+      ) : (
+        // Lightweight cover: the heavy Twitch player only loads on request (or automatically when live).
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-card to-background p-4 text-center">
+          <span className="flex size-16 items-center justify-center rounded-2xl bg-offline/15 text-offline ring-1 ring-offline/30">
+            <TwitchIcon className="size-8" />
+          </span>
+          <p className="text-sm text-muted-foreground">Al momento sono offline</p>
+          <Button variant="glow" size="lg" onClick={onActivate}>
+            <Play /> Carica il player
+          </Button>
         </div>
       )}
     </div>
@@ -54,6 +65,8 @@ export function TwitchSection({
   followers: number | null;
 }) {
   const [cinema, setCinema] = useState(false);
+  const [loadRequested, setLoadRequested] = useState(false);
+  const playerActive = live || cinema || loadRequested;
 
   useEffect(() => {
     if (!cinema) return;
@@ -114,7 +127,7 @@ export function TwitchSection({
           </>
         ) : null}
 
-        <TwitchPlayer cinema={cinema} />
+        <TwitchPlayer cinema={cinema} active={playerActive} onActivate={() => setLoadRequested(true)} />
         {cinema ? <div className="aspect-video w-full rounded-2xl border border-dashed border-border" /> : null}
 
         {goal && followers !== null ? (
