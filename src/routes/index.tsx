@@ -81,11 +81,6 @@ function Index() {
       />}
       <Hero live={live} avatarUrl={data.twitch.avatarUrl} />
       <main className="space-y-20 sm:space-y-28">
-        <CommunityStats
-          followers={data.twitch.followers}
-          members={data.discord.members}
-          online={data.discord.online}
-        />
         <DiscordSection
           members={data.discord.members}
           online={data.discord.online}
@@ -100,6 +95,11 @@ function Index() {
         />
         <SocialCards />
         <MomentiSection />
+        <CommunityStats
+          followers={data.twitch.followers}
+          members={data.discord.members}
+          online={data.discord.online}
+        />
         <CommunityExtras />
       </main>
       <SiteFooter />

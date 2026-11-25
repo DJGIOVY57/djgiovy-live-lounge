@@ -1,4 +1,4 @@
-import { Crown, Gamepad2 } from "lucide-react";
+import { Crown } from "lucide-react";
 
 import { nextFollowerGoal } from "@/lib/follower-goal";
 import { DISCORD } from "@/lib/site-config";
@@ -32,13 +32,6 @@ export function CommunityStats({
       highlight: false,
     },
     {
-      icon: Gamepad2,
-      value: `${DISCORD.games.length}+`,
-      label: "Stanze di gioco",
-      detail: `${DISCORD.games.slice(0, 3).join(", ")} e altri`,
-      highlight: false,
-    },
-    {
       icon: Crown,
       value: "2",
       label: "Progetti fondati",
@@ -49,9 +42,9 @@ export function CommunityStats({
 
   return (
     <section aria-label="La community in numeri" className="px-5">
-      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-3">
         {tiles.map(({ icon: Icon, value, label, detail, highlight }) => (
-          <article key={label} className="surface-card surface-card-interactive flex flex-col gap-2 p-4 sm:p-5">
+          <article key={label} className={`surface-card surface-card-interactive flex flex-col gap-2 p-4 sm:p-5 ${highlight ? "col-span-2 sm:col-span-1" : ""}`}>
             <span
               className={`flex size-9 items-center justify-center rounded-lg ring-1 ${
                 highlight ? "bg-highlight/15 text-highlight ring-highlight/40" : "bg-primary/15 text-primary ring-primary/40"
