@@ -7,6 +7,7 @@ import { ScrollReveal } from "@/components/landing/ScrollReveal";
 import { CustomCursor } from "@/components/landing/CustomCursor";
 import { DiscordSection } from "@/components/landing/DiscordSection";
 import { Hero } from "@/components/landing/Hero";
+import { CommunityStats } from "@/components/landing/CommunityStats";
 import { CommunityExtras } from "@/components/landing/CommunityExtras";
 import { LiveModeToggle } from "@/components/landing/LiveModeToggle";
 import { LiveNotificationBanner } from "@/components/landing/LiveNotificationBanner";
@@ -80,6 +81,11 @@ function Index() {
       />}
       <Hero live={live} avatarUrl={data.twitch.avatarUrl} />
       <main className="space-y-20 sm:space-y-28">
+        <CommunityStats
+          followers={data.twitch.followers}
+          members={data.discord.members}
+          online={data.discord.online}
+        />
         <DiscordSection
           members={data.discord.members}
           online={data.discord.online}
