@@ -8,7 +8,6 @@ type Tile = {
   valueClass?: string;
   label: string;
   detail: string;
-  highlight: boolean;
 };
 
 /** Quick facts block: the tiles read every value from ECOSYSTEM in site-config. */
@@ -19,29 +18,25 @@ export function CommunityStats() {
       value: String(ECOSYSTEM.startYear),
       label: "Anno di partenza",
       detail: "Dalla prima pagina Google Sites alla Lounge attuale.",
-      highlight: false,
     },
     {
       icon: Crown,
       value: String(ECOSYSTEM.projects.length),
       label: "Progetti fondati",
       detail: "Gaming Hub & I migliori momenti di Twitch",
-      highlight: true,
     },
     {
       icon: Gem,
       value: "Affiliato",
-      valueClass: "text-3xl sm:text-[1.75rem]",
+      valueClass: "text-xl sm:text-2xl",
       label: "Canale Twitch",
       detail: "Riconoscimento ufficiale di Twitch per il canale djgiovy57.",
-      highlight: false,
     },
     {
       icon: CalendarRange,
       value: ECOSYSTEM.yearsLabel,
       label: "Anni di community",
       detail: "Dal 2021 a oggi, cresciuta live dopo live.",
-      highlight: false,
     },
   ];
 
@@ -53,14 +48,16 @@ export function CommunityStats() {
         </h2>
       </header>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {tiles.map(({ icon: Icon, value, valueClass, label, detail, highlight }) => (
-          <article key={label} data-cursor-highlight={highlight || undefined} className={`surface-card flex flex-col gap-3 p-6 ${highlight ? "surface-card-highlight border-highlight/20" : "surface-card-interactive"}`}>
-            <span className={`flex size-10 shrink-0 items-center justify-center rounded-lg ring-1 ${highlight ? "bg-highlight/15 text-highlight ring-highlight/30" : "bg-primary/15 text-primary ring-primary/30"}`}>
-              <Icon className="size-5" aria-hidden="true" />
+        {tiles.map(({ icon: Icon, value, valueClass, label, detail }) => (
+          <article key={label} className="surface-card surface-card-interactive flex flex-col gap-3 p-6">
+            <span className="flex items-center gap-3">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary ring-1 ring-primary/30">
+                <Icon className="size-5" aria-hidden="true" />
+              </span>
+              <span className={`font-display font-bold text-gradient-primary ${valueClass ?? "text-4xl"}`}>
+                {value}
+              </span>
             </span>
-            <p className={`font-display font-bold ${valueClass ?? "text-4xl"} ${highlight ? "text-gradient-highlight" : "text-gradient-primary"}`}>
-              {value}
-            </p>
             <h3 className="font-display text-sm font-bold uppercase tracking-normal text-foreground">{label}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">{detail}</p>
           </article>
