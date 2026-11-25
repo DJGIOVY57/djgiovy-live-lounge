@@ -88,7 +88,7 @@ export const MOMENTI = {
   },
 } as const;
 
-/** Stable ecosystem facts, shared by the two draft presentation alternatives. */
+/** Stable ecosystem facts: the "Qualche info" tiles and the "I due progetti" comparison both read from here. */
 export const ECOSYSTEM = {
   startYear: 2021,
   platforms: ["Twitch", "YouTube", "Discord", "TikTok", "Spotify", "Instagram", "Twitter/X"],

@@ -30,7 +30,7 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
-- The draft's two ecosystem alternatives render together in CommunityStats from ECOSYSTEM in site-config; keep stable facts and project links centralized so both presentations agree.
+- The "Qualche info" tiles (CommunityStats) and the "I due progetti" comparison (CommunityExtras, under the FAQ) both render from ECOSYSTEM in site-config; keep stable facts and project links centralized so the two presentations agree.
 - Sitemap URLs derive from router staticData.sitemap decisions via src/lib/sitemap.ts and /sitemap.xml, using SITE.url; omit lastmod without page-specific content timestamps so future routes stay explicit and dates remain accurate.
 - Community FAQ copy lives in site-config; browser-only sharing and clipboard actions remain client event handlers to avoid server dependencies.
 - Creator info and links live only in `src/lib/site-config.ts`; components read from it so copy changes are one-file edits.

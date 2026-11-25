@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Tenere entrambe le presentazioni: "Qualche info" in home e "I due progetti" sotto le FAQ
+
 - [x] Mostrare e verificare entrambe le alternative nella bozza: percorso 2021/2/7 e confronto Gaming Hub/Momenti con date e colori dedicati
 
 - [x] Sostituire temporaneamente la barra laterale con un pulsante "torna in cima" su tutte le pagine e ripristinare lo scorrimento nativo del browser
