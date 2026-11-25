@@ -12,9 +12,9 @@ describe("Ecosystem facts", () => {
     expect(ECOSYSTEM.projects.map((project) => project.name)).toEqual(["GAMING HUB", "I migliori momenti di Twitch"]);
   });
 
-  it("connects exactly the seven requested platforms", () => {
-    expect(ECOSYSTEM.platforms).toEqual(["Twitch", "YouTube", "Discord", "TikTok", "Spotify", "Instagram", "Twitter/X"]);
-    expect(ECOSYSTEM.platforms).toHaveLength(7);
+  it("shows the Twitch affiliate badge and the years of community", () => {
+    expect(ECOSYSTEM.twitchAffiliate).toBe(true);
+    expect(ECOSYSTEM.yearsLabel).toBe("5+");
   });
 
   it("dates Gaming Hub to November 2021", () => {

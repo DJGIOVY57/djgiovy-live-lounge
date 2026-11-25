@@ -91,7 +91,8 @@ export const MOMENTI = {
 /** Stable ecosystem facts: the "Qualche info" tiles and the "I due progetti" comparison both read from here. */
 export const ECOSYSTEM = {
   startYear: 2021,
-  platforms: ["Twitch", "YouTube", "Discord", "TikTok", "Spotify", "Instagram", "Twitter/X"],
+  yearsLabel: "5+",
+  twitchAffiliate: true,
   projects: [
     {
       name: DISCORD.name,

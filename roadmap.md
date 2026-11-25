@@ -1,5 +1,6 @@
 # Roadmap
 
+- [ ] Confrontare le due card "Affiliato Twitch" e "5+ Anni di community" in "Qualche info" e tenere la migliore
 - [x] Tenere entrambe le presentazioni: "Qualche info" in home e "I due progetti" sotto le FAQ
 
 - [x] Mostrare e verificare entrambe le alternative nella bozza: percorso 2021/2/7 e confronto Gaming Hub/Momenti con date e colori dedicati
