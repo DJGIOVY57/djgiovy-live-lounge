@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Sostituire temporaneamente la barra laterale con un pulsante "torna in cima" su tutte le pagine e ripristinare lo scorrimento nativo del browser
+
 - [x] Pagina link-in-bio /momenti per le bio dei profili del progetto, con test e verifica
 
 - [x] Estendere la barra laterale a tutte le pagine, con frecce e trascinamento anche su Timeline e Changelog
