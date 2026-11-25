@@ -88,3 +88,27 @@ export const MOMENTI = {
   },
 } as const;
 
+/** Stable ecosystem facts, shared by the two draft presentation alternatives. */
+export const ECOSYSTEM = {
+  startYear: 2021,
+  platforms: ["Twitch", "YouTube", "Discord", "TikTok", "Spotify", "Instagram", "Twitter/X"],
+  projects: [
+    {
+      name: DISCORD.name,
+      founded: "2021-11",
+      foundedLabel: "Novembre 2021",
+      description: "Un posto dove incontrarsi, trovare compagni di squadra e giocare insieme.",
+      to: "/gaming-hub",
+      highlight: false,
+    },
+    {
+      name: MOMENTI.name,
+      founded: "2022-03",
+      foundedLabel: "Marzo 2022",
+      description: "Le clip più belle nate in live, raccolte e condivise con la community.",
+      to: "/momenti",
+      highlight: true,
+    },
+  ],
+} as const;
+

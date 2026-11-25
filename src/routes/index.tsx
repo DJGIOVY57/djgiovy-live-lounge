@@ -94,11 +94,7 @@ function Index() {
         />
         <SocialCards />
         <MomentiSection />
-        <CommunityStats
-          followers={data.twitch.followers}
-          members={data.discord.members}
-          online={data.discord.online}
-        />
+        <CommunityStats />
         <CommunityExtras />
       </main>
       <SiteFooter />
