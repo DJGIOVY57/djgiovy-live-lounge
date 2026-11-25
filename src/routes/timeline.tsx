@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, Flag, Milestone } from "lucide-react";
 
-import { CustomCursor } from "@/components/landing/CustomCursor";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { MOMENTI_MILESTONES } from "@/lib/momenti-timeline-data";
@@ -210,7 +209,6 @@ function TimelinePage() {
         </div>
       </main>
       <SiteFooter />
-      <CustomCursor />
     </div>
   );
 }

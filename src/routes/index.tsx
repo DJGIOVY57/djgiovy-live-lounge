@@ -4,7 +4,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
 import { ScrollReveal } from "@/components/landing/ScrollReveal";
-import { CustomCursor } from "@/components/landing/CustomCursor";
 import { DiscordSection } from "@/components/landing/DiscordSection";
 import { Hero } from "@/components/landing/Hero";
 import { CommunityStats } from "@/components/landing/CommunityStats";
@@ -104,7 +103,6 @@ function Index() {
       </main>
       <SiteFooter />
       <ScrollReveal />
-      <CustomCursor />
       {showToggle && <LiveModeToggle mode={mode} onChange={setMode} />}
     </div>
   );

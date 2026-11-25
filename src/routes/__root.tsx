@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { CustomCursor } from "@/components/landing/CustomCursor";
 import { ScrollDock } from "@/components/landing/ScrollDock";
 
 function NotFoundComponent() {
@@ -136,6 +137,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <ScrollDock />
+      <CustomCursor />
     </QueryClientProvider>
   );
 }

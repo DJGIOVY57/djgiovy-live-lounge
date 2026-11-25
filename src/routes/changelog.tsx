@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, CalendarDays, Check, History, Palette, Sparkles } from "lucide-react";
 
-import { CustomCursor } from "@/components/landing/CustomCursor";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { CURRENT_RELEASE, RELEASES } from "@/lib/changelog-data";
@@ -123,7 +122,6 @@ function ChangelogPage() {
         </ol>
       </main>
       <SiteFooter />
-      <CustomCursor />
     </div>
   );
 }
