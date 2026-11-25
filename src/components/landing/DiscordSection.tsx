@@ -1,5 +1,7 @@
 import { ArrowUpRight, Gamepad2, Radio, Users } from "lucide-react";
 
+import { Link } from "@tanstack/react-router";
+
 import { Button } from "@/components/ui/button";
 import { CREATOR, DISCORD } from "@/lib/site-config";
 
@@ -74,11 +76,16 @@ export function DiscordSection({
                 ) : null}
               </div>
             </div>
-            <Button asChild variant="glow" size="xl" className="w-full sm:w-auto">
-              <a href={CREATOR.links.discord} target="_blank" rel="noopener noreferrer">
-                Entra nel Gaming Hub <ArrowUpRight />
-              </a>
-            </Button>
+            <div className="flex w-full flex-col gap-3 sm:w-auto">
+              <Button asChild variant="glow" size="xl" className="w-full sm:w-auto">
+                <a href={CREATOR.links.discord} target="_blank" rel="noopener noreferrer">
+                  Entra nel Gaming Hub <ArrowUpRight />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+                <Link to="/gaming-hub">Scopri il Gaming Hub</Link>
+              </Button>
+            </div>
           </article>
 
           <div className="mt-5 grid gap-5 md:grid-cols-3">

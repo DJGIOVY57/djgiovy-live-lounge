@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ChangelogRouteImport } from './routes/changelog'
+import { Route as GamingHubRouteImport } from './routes/gaming-hub'
 import { Route as MomentiRouteImport } from './routes/momenti'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TimelineRouteImport } from './routes/timeline'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const ChangelogRoute = ChangelogRouteImport.update({
   id: '/changelog',
   path: '/changelog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GamingHubRoute = GamingHubRouteImport.update({
+  id: '/gaming-hub',
+  path: '/gaming-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MomentiRoute = MomentiRouteImport.update({
@@ -44,6 +50,7 @@ const TimelineRoute = TimelineRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/changelog': typeof ChangelogRoute
+  '/gaming-hub': typeof GamingHubRoute
   '/momenti': typeof MomentiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/timeline': typeof TimelineRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/changelog': typeof ChangelogRoute
+  '/gaming-hub': typeof GamingHubRoute
   '/momenti': typeof MomentiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/timeline': typeof TimelineRoute
@@ -59,22 +67,42 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/changelog': typeof ChangelogRoute
+  '/gaming-hub': typeof GamingHubRoute
   '/momenti': typeof MomentiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/timeline': typeof TimelineRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/changelog' | '/momenti' | '/sitemap.xml' | '/timeline'
+  fullPaths:
+    | '/'
+    | '/changelog'
+    | '/gaming-hub'
+    | '/momenti'
+    | '/sitemap.xml'
+    | '/timeline'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/changelog' | '/momenti' | '/sitemap.xml' | '/timeline'
+  to:
+    | '/'
+    | '/changelog'
+    | '/gaming-hub'
+    | '/momenti'
+    | '/sitemap.xml'
+    | '/timeline'
   id:
-    '__root__' | '/' | '/changelog' | '/momenti' | '/sitemap.xml' | '/timeline'
+    | '__root__'
+    | '/'
+    | '/changelog'
+    | '/gaming-hub'
+    | '/momenti'
+    | '/sitemap.xml'
+    | '/timeline'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ChangelogRoute: typeof ChangelogRoute
+  GamingHubRoute: typeof GamingHubRoute
   MomentiRoute: typeof MomentiRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TimelineRoute: typeof TimelineRoute
@@ -94,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/changelog'
       fullPath: '/changelog'
       preLoaderRoute: typeof ChangelogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gaming-hub': {
+      id: '/gaming-hub'
+      path: '/gaming-hub'
+      fullPath: '/gaming-hub'
+      preLoaderRoute: typeof GamingHubRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/momenti': {
@@ -123,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ChangelogRoute: ChangelogRoute,
+  GamingHubRoute: GamingHubRoute,
   MomentiRoute: MomentiRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TimelineRoute: TimelineRoute,

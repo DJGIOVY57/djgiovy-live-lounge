@@ -6,9 +6,9 @@ import { SITE } from "@/lib/site-config";
 import { sitemapStaticPaths, sitemapXML } from "./sitemap";
 
 describe("Lounge sitemap", () => {
-  it("includes exactly the four public pages, not the sitemap itself", () => {
+  it("includes exactly the five public pages, not the sitemap itself", () => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
-    expect(sitemapStaticPaths(router)).toEqual(["/", "/changelog", "/momenti", "/timeline"]);
+    expect(sitemapStaticPaths(router)).toEqual(["/", "/changelog", "/gaming-hub", "/momenti", "/timeline"]);
   });
 
   it("uses the official domain and omits unsupported modification dates", () => {
