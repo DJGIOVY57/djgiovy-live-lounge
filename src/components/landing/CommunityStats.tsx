@@ -55,14 +55,12 @@ export function CommunityStats() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {tiles.map(({ icon: Icon, value, valueClass, label, detail, highlight }) => (
           <article key={label} data-cursor-highlight={highlight || undefined} className={`surface-card flex flex-col gap-3 p-6 ${highlight ? "surface-card-highlight border-highlight/20" : "surface-card-interactive"}`}>
-            <div className="flex items-center justify-between gap-4">
-              <span className={`flex size-10 shrink-0 items-center justify-center rounded-lg ring-1 ${highlight ? "bg-highlight/15 text-highlight ring-highlight/30" : "bg-primary/15 text-primary ring-primary/30"}`}>
-                <Icon className="size-5" aria-hidden="true" />
-              </span>
-              <p className={`text-right font-display font-bold ${valueClass ?? "text-4xl"} ${highlight ? "text-gradient-highlight" : "text-gradient-primary"}`}>
-                {value}
-              </p>
-            </div>
+            <span className={`flex size-10 shrink-0 items-center justify-center rounded-lg ring-1 ${highlight ? "bg-highlight/15 text-highlight ring-highlight/30" : "bg-primary/15 text-primary ring-primary/30"}`}>
+              <Icon className="size-5" aria-hidden="true" />
+            </span>
+            <p className={`font-display font-bold ${valueClass ?? "text-4xl"} ${highlight ? "text-gradient-highlight" : "text-gradient-primary"}`}>
+              {value}
+            </p>
             <h3 className="font-display text-sm font-bold uppercase tracking-normal text-foreground">{label}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">{detail}</p>
           </article>
