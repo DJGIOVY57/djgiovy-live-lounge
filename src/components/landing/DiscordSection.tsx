@@ -89,18 +89,6 @@ export function DiscordSection({
           </article>
 
           <div className="mt-5 grid gap-5 md:grid-cols-3">
-            {PERKS.map((perk) => (
-              <article key={perk.title} className="surface-card flex flex-col p-6">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
-                  <perk.icon className="size-6" aria-hidden="true" />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-bold text-foreground">
-                  {perk.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{perk.text}</p>
-              </article>
-            ))}
-
             <article className="surface-card flex flex-col p-6">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
                 <Gamepad2 className="size-6" aria-hidden="true" />
@@ -126,6 +114,18 @@ export function DiscordSection({
                 </li>
               </ul>
             </article>
+
+            {PERKS.map((perk) => (
+              <article key={perk.title} className="surface-card flex flex-col p-6">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                  <perk.icon className="size-6" aria-hidden="true" />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-bold text-foreground">
+                  {perk.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{perk.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
