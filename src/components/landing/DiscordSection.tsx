@@ -1,4 +1,4 @@
-import { ArrowUpRight, Gamepad2, Radio, Users } from "lucide-react";
+import { ArrowUpRight, Gamepad2, Headphones, Search } from "lucide-react";
 
 import { Link } from "@tanstack/react-router";
 
@@ -9,20 +9,20 @@ import { DiscordIcon } from "./BrandIcons";
 
 const PERKS = [
   {
-    icon: Users,
-    title: "Community sempre attiva",
-    text: "Ci ritroviamo anche fuori dalle dirette: chiacchiere, giochi e tanta compagnia.",
+    icon: Search,
+    title: "Trova compagni di squadra",
+    text: "Cerca altri player con cui fare sessioni, scalare i rank o completare missioni senza finire in squadra con sconosciuti a caso.",
   },
   {
-    icon: Radio,
-    title: "Avvisi live",
-    text: "Ricevi la notifica appena vado in onda su Twitch, così non ti perdi nemmeno una diretta.",
+    icon: Headphones,
+    title: "Canali vocali dedicati",
+    text: "Stanze vocali divise per ogni titolo con audio dedicato, perfette per callout di squadra e coordinazione in tempo reale.",
   },
 ] as const;
 
 /**
  * Discord gets its own dedicated section (like "I migliori momenti di Twitch")
- * because it's the heart of the community — while staying in the social grid too.
+ * because the Gaming Hub is a standalone project, not just another social link.
  */
 export function DiscordSection({
   members,
