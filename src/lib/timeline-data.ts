@@ -8,11 +8,25 @@ export const MILESTONES = [
       "Il sito si evolve nella Lounge attuale: un nuovo capitolo dell’idea nata nel 2021.",
   },
   {
+    date: "2023-06-01",
+    title: "Il server diventa GAMING HUB",
+    label: "Il nome definitivo",
+    description:
+      "Gaming Community viene rinominato GAMING HUB: il nome che il server porta ancora oggi.",
+  },
+  {
+    date: "2022-06-01",
+    title: "Gaming Community, aperto a tutti",
+    label: "L’apertura",
+    description:
+      "Il server cambia nome in Gaming Community e apre le sue stanze a tutti i player, non solo a chi arrivava da Twitch.",
+  },
+  {
     date: "2021-11",
-    title: "Nasce il Gaming Hub",
+    title: "Nasce DJCORD",
     label: "La community",
     description:
-      "Viene fondato il server Discord Gaming Hub: lo spazio dove la community si incontra, organizza le partite e segue le live.",
+      "Viene fondato il server Discord DJCORD, riservato alla community che seguiva DJGIOVY57 su Twitch: il primo nucleo di quello che diventerà il Gaming Hub.",
   },
   {
     date: "2021-10-25",

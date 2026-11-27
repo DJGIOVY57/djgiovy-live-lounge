@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Timeline: server Discord nato come DJCORD (nov 2021), Gaming Community dal 1 giugno 2022, GAMING HUB dal 1 giugno 2023
+
 - [x] Confrontare le due card "Affiliato Twitch" e "5+ Anni di community" in "Qualche info" e tenere la migliore
 - [x] Tenere entrambe: "Qualche info" in home e "I due progetti" sotto le FAQ
 - [x] "Qualche info": valore accanto all'icona, verde smeraldo per tutte e quattro le card

@@ -12,8 +12,20 @@ describe("Site history dates", () => {
     expect(MILESTONES.find((entry) => entry.title === "Il sito diventa la Lounge")?.date).toBe("2026-11-23");
   });
 
-  it("records the Gaming Hub founding in November 2021", () => {
-    expect(MILESTONES.find((entry) => entry.title === "Nasce il Gaming Hub")?.date).toBe("2021-11");
+  it("records the server birth as DJCORD in November 2021", () => {
+    expect(MILESTONES.find((entry) => entry.title === "Nasce DJCORD")?.date).toBe("2021-11");
+  });
+
+  it("records the opening to everyone as Gaming Community on 1 June 2022", () => {
+    expect(
+      MILESTONES.find((entry) => entry.title === "Gaming Community, aperto a tutti")?.date,
+    ).toBe("2022-06-01");
+  });
+
+  it("records the rename into GAMING HUB on 1 June 2023", () => {
+    expect(
+      MILESTONES.find((entry) => entry.title === "Il server diventa GAMING HUB")?.date,
+    ).toBe("2023-06-01");
   });
 
   it("dates the first release the day the Lounge began", () => {
