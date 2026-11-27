@@ -17,8 +17,10 @@ describe("Ecosystem facts", () => {
     expect(ECOSYSTEM.yearsLabel).toBe("6+");
   });
 
-  it("dates Gaming Hub to November 2021", () => {
-    expect(ECOSYSTEM.projects.find((project) => project.to === "/gaming-hub")?.founded).toBe("2021-11");
+  it("dates Gaming Hub to 3 November 2021", () => {
+    expect(ECOSYSTEM.projects.find((project) => project.to === "/gaming-hub")?.founded).toBe(
+      "2021-11-03",
+    );
   });
 
   it("dates Momenti to March 2022", () => {

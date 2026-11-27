@@ -73,7 +73,7 @@ function GamingHubPage() {
             <DiscordIcon className="size-10" />
           </span>
           <p className="mt-6 font-display text-xs font-bold uppercase tracking-[0.2em] text-primary">
-            Un progetto di {CREATOR.name} · {DISCORD.role} · Dal novembre 2021
+            Un progetto di {CREATOR.name} · {DISCORD.role} · Dal 3 novembre 2021
           </p>
           <h1 className="mt-3 font-display text-4xl font-bold uppercase text-gradient-primary sm:text-5xl">
             {DISCORD.name}

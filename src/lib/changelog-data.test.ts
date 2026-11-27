@@ -13,7 +13,7 @@ describe("Site history dates", () => {
   });
 
   it("records the server birth as DJCORD in November 2021", () => {
-    expect(MILESTONES.find((entry) => entry.title === "Nasce DJCORD")?.date).toBe("2021-11");
+    expect(MILESTONES.find((entry) => entry.title === "Nasce DJCORD")?.date).toBe("2021-11-03");
   });
 
   it("records the opening to everyone as Gaming Community on 1 June 2022", () => {

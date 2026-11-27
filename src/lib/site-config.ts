@@ -96,8 +96,8 @@ export const ECOSYSTEM = {
   projects: [
     {
       name: DISCORD.name,
-      founded: "2021-11",
-      foundedLabel: "Novembre 2021",
+      founded: "2021-11-03",
+      foundedLabel: "3 Novembre 2021",
       description: "Un posto dove incontrarsi, trovare compagni di squadra e giocare insieme.",
       to: "/gaming-hub",
       highlight: false,

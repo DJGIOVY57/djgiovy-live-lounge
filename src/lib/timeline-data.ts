@@ -22,7 +22,7 @@ export const MILESTONES = [
       "Il server cambia nome in Gaming Community e apre le sue stanze a tutti i player, non solo a chi arrivava da Twitch.",
   },
   {
-    date: "2021-11",
+    date: "2021-11-03",
     title: "Nasce DJCORD",
     label: "La community",
     description:
